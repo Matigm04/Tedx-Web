@@ -148,23 +148,52 @@
 }
 
 .speakers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
+    /* Configurar para 4 elementos en primera fila */
+    justify-content: flex-start;
+    align-items: stretch; /* Clave: esto iguala la altura de las tarjetas en cada fila */
 }
 
+/* Configurar ancho de tarjetas para que quepan exactamente 4 por fila */
 .speaker-card {
+    /* Ancho calculado: (100% - 3 gaps) / 4 = aproximadamente 22% */
+    flex: 0 0 calc(22% - 7.5px);
+    min-width: 200px;
+    max-width: 280px;
     text-align: center;
-    background: #f8f9fa;
-    padding: 25px;
-    border-radius: 15px;
+    background: white;
+    padding: 15px 20px 0 20px;
+    border-radius: 20px;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f0f0f0;
+    overflow: visible; /* Permitir que el contenido se expanda */
+    position: relative;
+    /* Usar Flexbox interno para layout de contenido */
+    display: flex;
+    flex-direction: column;
+    min-height: 270px; /* Altura mínima en lugar de altura fija */
+    /* Configurar áreas flexibles para alineación vertical */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.speaker-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #e62b1e 0%, #ff4444 100%);
 }
 
 .speaker-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    background: white;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: #e62b1e;
 }
 
 .speaker-card img {
@@ -172,21 +201,64 @@
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin: 5px auto 10px auto;
     border: 4px solid #e62b1e;
+    transition: all 0.3s ease;
+    display: block;
+    /* Imagen flexible pero sin crecer */
+    flex-shrink: 0;
+}
+
+.speaker-card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(230, 43, 30, 0.3);
 }
 
 .speaker-card h4 {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
     margin-bottom: 8px;
+    line-height: 1.3;
+    /* Área flexible para nombres de diferentes longitudes */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Altura mínima para alineación pero permitir crecimiento */
+    min-height: 60px;
+    /* Permitir salto de línea en nombres largos */
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 0 5px;
 }
 
 .speaker-card p {
-    color: #666;
-    font-size: 0.95rem;
+    color: white;
+    font-size: 0.9rem;
     line-height: 1.4;
+    background: #e62b1e;
+    padding: 12px 15px; /* Padding lateral para mejor legibilidad */
+    margin: 0;
+    border-radius: 0 0 18px 18px;
+    font-weight: 500;
+    min-height: 48px; /* Altura mínima en lugar de fija */
+    display: block; /* Cambiar a block para ancho completo */
+    text-align: center;
+    /* Asegurar ancho completo */
+    width: calc(100% + 40px); /* Extender más allá del padding */
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: auto; /* Empujar hacia abajo */
+    /* Permitir que el texto se ajuste automáticamente */
+    white-space: normal;
+    word-wrap: break-word;
+    /* Flexbox interno para centrado vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* No contraer este elemento */
 }
 
 /* Sponsors Section */
@@ -195,14 +267,39 @@
     border-top: 1px solid #eee;
     margin-top: 30px;
     padding-top: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.sponsors-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #e62b1e 50%, transparent 100%);
 }
 
 .sponsors-section h3 {
     font-size: 2rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: center;
+    position: relative;
+}
+
+.sponsors-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #e62b1e 0%, #ff4444 100%);
+    border-radius: 2px;
 }
 
 .sponsors-grid {
@@ -229,8 +326,8 @@
 
 .sponsor-logo:hover {
     border-color: #e62b1e;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(230, 43, 30, 0.15);
 }
 
 .sponsor-logo img {
@@ -303,8 +400,69 @@
     }
 
     .speakers-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
+        justify-content: center;
+        align-items: stretch; /* Igualar altura en filas */
+    }
+    
+    .speaker-card {
+        padding: 15px 18px 0 18px;
+        min-height: 250px; /* Altura mínima en lugar de fija */
+        overflow: visible; /* Permitir expansión */
+        /* Usar Flexbox interno en responsive */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        /* Ancho flexible para tablet (2 por fila) */
+        flex: 0 0 calc(45% - 10px);
+        min-width: 180px;
+        max-width: 250px;
+    }
+    
+    .speaker-card img {
+        width: 85px;
+        height: 85px;
+        margin: 5px auto 8px auto;
+        display: block;
+        flex-shrink: 0;
+    }
+    
+    .speaker-card h4 {
+        font-size: 1.05rem;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 55px;
+        white-space: normal;
+        word-wrap: break-word;
+        padding: 0 5px;
+        line-height: 1.3;
+    }
+    
+    .speaker-card p {
+        font-size: 0.85rem;
+        margin: 0;
+        min-height: 44px;
+        padding: 10px 12px;
+        flex-shrink: 0;
+        width: calc(100% + 36px);
+        margin-left: -18px;
+        margin-right: -18px;
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e62b1e;
+        color: white;
+        border-radius: 0 0 18px 18px;
+        white-space: normal;
+        word-wrap: break-word;
+        line-height: 1.3;
     }
 
     .sponsors-grid {
@@ -358,6 +516,70 @@
     .sponsors-section h3 {
         font-size: 1.5rem;
     }
+    
+    .speakers-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .speaker-card {
+        padding: 12px 15px 0 15px;
+        max-width: 300px;
+        width: 100%;
+        min-height: 230px; /* Altura mínima en lugar de fija */
+        overflow: visible; /* Permitir expansión */
+        /* Usar Flexbox interno en móvil */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .speaker-card img {
+        width: 75px;
+        height: 75px;
+        margin: 5px auto 8px auto;
+        display: block;
+        flex-shrink: 0;
+    }
+    
+    .speaker-card h4 {
+        font-size: 0.95rem;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 50px;
+        white-space: normal;
+        word-wrap: break-word;
+        padding: 0 5px;
+        line-height: 1.3;
+    }
+    
+    .speaker-card p {
+        font-size: 0.8rem;
+        margin: 0;
+        min-height: 40px;
+        padding: 10px 10px;
+        flex-shrink: 0;
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-top: auto;
+        background: #e62b1e;
+        color: white;
+        border-radius: 0 0 18px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        word-wrap: break-word;
+        line-height: 1.3;
+    }
 
     .sponsors-grid {
         grid-template-columns: 1fr;
@@ -381,4 +603,39 @@
         margin-left: -15px;
         margin-right: -15px;
     }
+}
+
+/* Regla especial para centrar automáticamente la última fila incompleta */
+.speakers-grid .speaker-card:last-child:nth-child(3n+1) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 250px;
+}
+
+.speakers-grid .speaker-card:last-child:nth-child(3n+2) {
+    grid-column-start: 1;
+}
+
+/* Si hay exactamente 2 tarjetas en la última fila en un grid de 3+ columnas */
+.speakers-grid .speaker-card:nth-last-child(2):nth-child(3n+1) {
+    grid-column: 2;
+}
+
+/* Regla específica para centrar las últimas 3 tarjetas como grupo */
+.speakers-grid .speaker-card:nth-child(n+5) {
+    /* Las tarjetas 5, 6 y 7 (segunda fila) */
+    flex: 0 0 calc(22% - 7.5px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Centrar específicamente el grupo de 3 tarjetas de la segunda fila */
+.speakers-grid .speaker-card:nth-child(5) {
+    /* Primera tarjeta de la segunda fila - agregar margen izquierdo para centrar el grupo */
+    margin-left: calc((100% - (3 * (22% - 7.5px)) - (2 * 30px)) / 2);
+}
+
+.speakers-grid .speaker-card:nth-child(7) {
+    /* Última tarjeta - agregar margen derecho para balancear */
+    margin-right: calc((100% - (3 * (22% - 7.5px)) - (2 * 30px)) / 2);
 }

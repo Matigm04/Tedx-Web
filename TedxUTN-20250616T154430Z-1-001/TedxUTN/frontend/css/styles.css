@@ -141,13 +141,29 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Contorno negro para mejorar legibilidad */
+    -webkit-text-stroke: 2px #000000;
+    text-stroke: 2px #000000;
+    /* Respaldo para navegadores que no soportan text-stroke */
+    filter: drop-shadow(0 0 3px #000000) drop-shadow(0 0 6px #000000);
 }
 
 .slide-content p {
     font-size: 1.5rem;
-    font-weight: 300;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    /* Fondo semi-transparente para mejorar legibilidad */
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px 25px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px auto;
+    display: inline-block;
+    max-width: 90%;
 }
 
 /* Carousel Controls */
@@ -452,10 +468,14 @@ body {
 
     .slide-content h1 {
         font-size: 2.5rem;
+        -webkit-text-stroke: 1.5px #000000;
+        filter: drop-shadow(0 0 2px #000000) drop-shadow(0 0 4px #000000);
     }
 
     .slide-content p {
         font-size: 1.2rem;
+        padding: 12px 20px;
+        margin: 15px auto;
     }
 
     .about-grid {
@@ -484,10 +504,15 @@ body {
 @media (max-width: 480px) {
     .slide-content h1 {
         font-size: 2rem;
+        -webkit-text-stroke: 1px #000000;
+        filter: drop-shadow(0 0 2px #000000) drop-shadow(0 0 3px #000000);
     }
 
     .slide-content p {
         font-size: 1rem;
+        padding: 10px 15px;
+        margin: 12px auto;
+        max-width: 95%;
     }
 
     .section-header h2 {
