@@ -139,20 +139,42 @@
     padding-top: 40px;
 }
 
+.section-separator {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(135deg, #e62b1e 0%, #ff4444 100%);
+    margin: 50px 0 40px 0;
+    border-radius: 1px;
+    opacity: 0.8;
+}
+
 .speakers-section h3 {
     font-size: 2rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: center;
+    position: relative;
+}
+
+.speakers-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #e62b1e 0%, #ff4444 100%);
+    border-radius: 2px;
 }
 
 .speakers-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    /* Configurar para 4 elementos en primera fila */
-    justify-content: flex-start;
+    /* Centrar el contenido para equilibrar espacios laterales */
+    justify-content: center;
     align-items: stretch; /* Clave: esto iguala la altura de las tarjetas en cada fila */
 }
 
@@ -174,26 +196,18 @@
     /* Usar Flexbox interno para layout de contenido */
     display: flex;
     flex-direction: column;
-    min-height: 270px; /* Altura mínima en lugar de altura fija */
+    height: 340px; /* Reducido de 360px a 340px para tarjetas más compactas */
     /* Configurar áreas flexibles para alineación vertical */
     justify-content: flex-start;
     align-items: center;
 }
 
-.speaker-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(135deg, #e62b1e 0%, #ff4444 100%);
-}
-
 .speaker-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 
+                0 0 20px rgba(230, 43, 30, 0.1); /* Resplandor sutil del color TEDx */
     border-color: #e62b1e;
+    background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%); /* Fondo ligeramente diferente */
 }
 
 .speaker-card img {
@@ -211,23 +225,22 @@
 
 .speaker-card:hover img {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(230, 43, 30, 0.3);
+    box-shadow: 0 8px 20px rgba(230, 43, 30, 0.25); /* Sombra más suave pero visible */
+    border-color: #ff4444; /* Cambio sutil en el borde */
 }
 
 .speaker-card h4 {
     font-size: 1.2rem;
     font-weight: 700;
     color: #333;
-    margin-bottom: 8px;
-    line-height: 1.3;
-    /* Área flexible para nombres de diferentes longitudes */
-    flex-grow: 1;
+    margin-bottom: 1px; /* Reducido de 8px a 2px para máxima compactación */
+    line-height: 1.2; /* Reducido de 1.3 a 1.2 */
+    /* Área reducida para nombres - menos espacio entre nombre y profesión */
+    height: 120px; /* Reducido de 60px a 50px para acortar aún más la distancia */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Altura mínima para alineación pero permitir crecimiento */
-    min-height: 60px;
     /* Permitir salto de línea en nombres largos */
     white-space: normal;
     word-wrap: break-word;
@@ -239,23 +252,22 @@
     font-size: 0.9rem;
     line-height: 1.4;
     background: #e62b1e;
-    padding: 12px 15px; /* Padding lateral para mejor legibilidad */
+    padding: 12px 20px; /* Padding lateral para mejor legibilidad */
     margin: 0;
     border-radius: 0 0 18px 18px;
     font-weight: 500;
-    min-height: 48px; /* Altura mínima en lugar de fija */
-    display: block; /* Cambiar a block para ancho completo */
+    height: 110px; /* Altura mayor para acomodar textos largos como el de Gianna */
+    display: flex; /* Usar flex para centrar contenido */
     text-align: center;
-    /* Asegurar ancho completo */
-    width: calc(100% + 40px); /* Extender más allá del padding */
-    margin-left: -20px;
-    margin-right: -20px;
+    /* Asegurar ancho completo extendiendo más allá del padding de la tarjeta */
+    width: calc(100% + 44px); /* Extender para cubrir todo el ancho incluyendo padding y borde */
+    margin-left: -22px; /* Centrar la extensión */
+    margin-right: -22px;
     margin-top: auto; /* Empujar hacia abajo */
     /* Permitir que el texto se ajuste automáticamente */
     white-space: normal;
     word-wrap: break-word;
     /* Flexbox interno para centrado vertical */
-    display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0; /* No contraer este elemento */
@@ -437,22 +449,23 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        min-height: 55px;
+        min-height: 45px; /* Reducido de 55px a 45px para compactación */
         white-space: normal;
         word-wrap: break-word;
         padding: 0 5px;
-        line-height: 1.3;
+        line-height: 1.2; /* Reducido de 1.3 a 1.2 */
+        margin-bottom: 2px; /* Reducir espacio con la profesión */
     }
     
     .speaker-card p {
         font-size: 0.85rem;
         margin: 0;
         min-height: 44px;
-        padding: 10px 12px;
+        padding: 10px 15px;
         flex-shrink: 0;
-        width: calc(100% + 36px);
-        margin-left: -18px;
-        margin-right: -18px;
+        width: calc(100% + 44px); /* Ajustar para cubrir todo el ancho en tablet */
+        margin-left: -22px;
+        margin-right: -22px;
         margin-top: auto;
         display: flex;
         align-items: center;
@@ -552,22 +565,23 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        min-height: 50px;
+        min-height: 40px; /* Reducido de 50px a 40px para compactación en móvil */
         white-space: normal;
         word-wrap: break-word;
         padding: 0 5px;
-        line-height: 1.3;
+        line-height: 1.2; /* Reducido de 1.3 a 1.2 */
+        margin-bottom: 2px; /* Reducir espacio con la profesión */
     }
     
     .speaker-card p {
         font-size: 0.8rem;
         margin: 0;
         min-height: 40px;
-        padding: 10px 10px;
+        padding: 10px 12px;
         flex-shrink: 0;
-        width: calc(100% + 30px);
-        margin-left: -15px;
-        margin-right: -15px;
+        width: calc(100% + 44px); /* Ajustar para cubrir todo el ancho en mobile */
+        margin-left: -22px;
+        margin-right: -22px;
         margin-top: auto;
         background: #e62b1e;
         color: white;
@@ -605,6 +619,105 @@
     }
 }
 
+/* Reglas específicas para mejorar el mobile layout y centrarlo como en edición 2023 */
+@media (max-width: 480px) {
+    /* Override para que todas las tarjetas tengan el mismo tamaño centrado */
+    .speakers-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .speaker-card {
+        width: 100% !important;
+        max-width: 320px !important;
+        min-height: 250px;
+        margin: 0 !important; /* Remover márgenes específicos */
+        padding: 20px 20px 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .speaker-card img {
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 3px solid #e62b1e;
+    }
+    
+    .speaker-card h4 {
+        font-size: 1.1rem;
+        margin: 5px 0 2px 0; /* Reducir márgenes para compactación máxima */
+        min-height: auto;
+        text-align: center;
+        line-height: 1.2; /* Líneas más compactas */
+    }
+    
+    .speaker-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-top: auto;
+        padding: 8px 15px;
+        text-align: center;
+        min-height: auto;
+        width: calc(100% + 44px) !important; /* Asegurar banda completa en mobile */
+        margin-left: -22px !important;
+        margin-right: -22px !important;
+        background: #e62b1e !important;
+        color: white !important;
+        border-radius: 0 0 18px 18px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Override para sponsors también */
+    .sponsors-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .sponsor-logo {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 160px;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .sponsor-logo img {
+        max-height: 60px !important;
+        max-width: 80%;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+    
+    .sponsor-logo p {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin: 0;
+        text-align: center;
+    }
+}
+
 /* Regla especial para centrar automáticamente la última fila incompleta */
 .speakers-grid .speaker-card:last-child:nth-child(3n+1) {
     grid-column: 1 / -1;
@@ -623,19 +736,34 @@
 
 /* Regla específica para centrar las últimas 3 tarjetas como grupo */
 .speakers-grid .speaker-card:nth-child(n+5) {
-    /* Las tarjetas 5, 6 y 7 (segunda fila) */
+    /* Las tarjetas 5, 6 y 7 (segunda fila) - mantener flex normal con centrado automático */
     flex: 0 0 calc(22% - 7.5px);
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Centrar específicamente el grupo de 3 tarjetas de la segunda fila */
-.speakers-grid .speaker-card:nth-child(5) {
-    /* Primera tarjeta de la segunda fila - agregar margen izquierdo para centrar el grupo */
-    margin-left: calc((100% - (3 * (22% - 7.5px)) - (2 * 30px)) / 2);
-}
-
-.speakers-grid .speaker-card:nth-child(7) {
-    /* Última tarjeta - agregar margen derecho para balancear */
-    margin-right: calc((100% - (3 * (22% - 7.5px)) - (2 * 30px)) / 2);
+/* Mejoras específicas para tablet - transición suave hacia mobile */
+@media (max-width: 768px) and (min-width: 481px) {
+    .speakers-grid {
+        justify-content: center;
+        gap: 25px;
+    }
+    
+    .speaker-card {
+        flex: 0 0 calc(45% - 12.5px);
+        max-width: 300px;
+        min-height: 280px;
+    }
+    
+    .speaker-card img {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .sponsors-grid {
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    .sponsor-logo {
+        max-width: 280px;
+    }
 }
