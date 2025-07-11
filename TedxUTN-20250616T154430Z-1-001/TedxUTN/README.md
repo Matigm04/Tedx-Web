@@ -6,6 +6,7 @@ Consideraciones / Dudas:
 2- Acomodar el Formato Mobile
 3- Necesito el numero de personas que asistieron en cada edicion (para poner un numero aproximado de +x cantidad de personas)
 4- Necesito una pequeña descripcion que defina de que se hablo o centro el evento. (la info que aparece en cada edicion)
+5- Aocmodar la estructura del formulario de inscripcion
 
 Planes futuros:
 1- Agregar un apartado de Nosotros y contando que hace cada area y poner videos y avances que muestren lo que fuimos haciendo como equipo
