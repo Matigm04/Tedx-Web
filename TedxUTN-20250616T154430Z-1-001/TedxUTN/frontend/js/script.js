@@ -125,3 +125,36 @@ function validateForm() {
     
     return isValid;
 }
+
+// Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionButtons = document.querySelectorAll('.accordion-btn');
+    
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+            const icon = this.querySelector('i:last-child');
+            
+            // Toggle active state
+            this.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            // Update button text
+            const span = this.querySelector('.btn-content span');
+            if (this.classList.contains('active')) {
+                if (targetId.includes('oradores')) {
+                    span.textContent = 'Ocultar Oradores';
+                } else if (targetId.includes('sponsors')) {
+                    span.textContent = 'Ocultar Sponsors';
+                }
+            } else {
+                if (targetId.includes('oradores')) {
+                    span.textContent = 'Ver Oradores';
+                } else if (targetId.includes('sponsors')) {
+                    span.textContent = 'Ver Sponsors';
+                }
+            }
+        });
+    });
+});
