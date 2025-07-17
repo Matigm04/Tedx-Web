@@ -375,6 +375,14 @@ body {
     background: #222;
     color: white;
     padding: 60px 0 20px;
+    width: 100%;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
 }
 
 .footer-content {

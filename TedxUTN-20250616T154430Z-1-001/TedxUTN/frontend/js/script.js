@@ -18,36 +18,45 @@ let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const indicators = document.querySelectorAll('.indicator');
 
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    slides[index].classList.add('active');
-    indicators[index].classList.add('active');
-}
-
-function changeSlide(direction) {
-    slideIndex += direction;
-    
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
+// Only run carousel if slides exist
+if (slides.length > 0) {
+    function showSlide(index) {
+        if (slides.length === 0) return; // Safety check
+        
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        if (slides[index]) {
+            slides[index].classList.add('active');
+        }
+        if (indicators[index]) {
+            indicators[index].classList.add('active');
+        }
     }
-    if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
+
+    function changeSlide(direction) {
+        slideIndex += direction;
+        
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        
+        showSlide(slideIndex);
     }
-    
-    showSlide(slideIndex);
-}
 
-function currentSlide(index) {
-    slideIndex = index - 1;
-    showSlide(slideIndex);
-}
+    function currentSlide(index) {
+        slideIndex = index - 1;
+        showSlide(slideIndex);
+    }
 
-// Auto-play carousel
-setInterval(() => {
-    changeSlide(1);
-}, 5000);
+    // Auto-play carousel
+    setInterval(() => {
+        changeSlide(1);
+    }, 5000);
+}
 
 // Smooth scrolling for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

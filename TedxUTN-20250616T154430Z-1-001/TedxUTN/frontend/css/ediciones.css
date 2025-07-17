@@ -879,3 +879,23 @@
         font-size: 0.9rem;
     }
 }
+
+/* Footer Override for Ediciones Page */
+.footer {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #222;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>    <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ediciones - TEDxUTN</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -479,9 +480,28 @@
                         </div>
                     </div>
                 </div>
-                <!-- Separador visual -->
-                <div class="section-separator"></div>
-                <div class="speakers-section">
+                
+                <!-- Botones de acordeón -->
+                <div class="accordion-buttons">
+                    <button class="accordion-btn" data-target="oradores-2022">
+                        <div class="btn-content">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Ver Oradores</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="accordion-btn" data-target="sponsors-2022">
+                        <div class="btn-content">
+                            <i class="fas fa-handshake"></i>
+                            <span>Ver Sponsors</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <!-- Speakers Section (Desplegable) -->
+                <div class="accordion-content" id="oradores-2022">
+                    <div class="speakers-section">
                     <h3>Speakers Destacados</h3>
                     <div class="speakers-grid">
                         <div class="speaker-card">
@@ -531,36 +551,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="sponsors-section">
-                    <h3>Sponsors y Colaboradores</h3>
-                    <div class="sponsors-grid">
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/AguiarYAsoc.jpg" alt="Aguiar & Asoc.">
-                            <p>Aguiar & Asoc.</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/Dinamic.png" alt="Dinamic">
-                            <p>Dinamic</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/DLOSS.jpg" alt="DLOSS">
-                            <p>DLOSS</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/IvecoGroup.png" alt="Iveco Group">
-                            <p>Iveco Group</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/AVEIT.png" alt="AVEIT">
-                            <p>AVEIT</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/utn.jpeg" alt="UTN">
-                            <p>UTN</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.png" alt="SEU">
-                            <p>SEU</p>
+                </div>
+
+                <!-- Sponsors Section (Desplegable) -->
+                <div class="accordion-content" id="sponsors-2022">
+                    <div class="sponsors-section">
+                        <h3>Sponsors y Colaboradores</h3>
+                        <div class="sponsors-grid">
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/AguiarYAsoc.jpg" alt="Aguiar & Asoc.">
+                                <p>Aguiar & Asoc.</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/Dinamic.png" alt="Dinamic">
+                                <p>Dinamic</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/DLOSS.jpg" alt="DLOSS">
+                                <p>DLOSS</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/IvecoGroup.png" alt="Iveco Group">
+                                <p>Iveco Group</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2021/Sponsors/AVEIT.png" alt="AVEIT">
+                                <p>AVEIT</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2021/Sponsors/utn.jpeg" alt="UTN">
+                                <p>UTN</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.png" alt="SEU">
+                                <p>SEU</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -596,9 +621,28 @@
                         </div>
                     </div>
                 </div>
-                <!-- Separador visual -->
-                <div class="section-separator"></div>
-                <div class="speakers-section">
+                
+                <!-- Botones de acordeón -->
+                <div class="accordion-buttons">
+                    <button class="accordion-btn" data-target="oradores-2021">
+                        <div class="btn-content">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Ver Oradores</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="accordion-btn" data-target="sponsors-2021">
+                        <div class="btn-content">
+                            <i class="fas fa-handshake"></i>
+                            <span>Ver Sponsors</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <!-- Speakers Section (Desplegable) -->
+                <div class="accordion-content" id="oradores-2021">
+                    <div class="speakers-section">
                     <h3>Speakers Destacados</h3>
                     <div class="speakers-grid">
                         <div class="speaker-card">
@@ -632,8 +676,12 @@
                             <p>Marketing and Business Development</p>
                         </div>
                     </div>
+                    </div>
                 </div>
-                <div class="sponsors-section">
+
+                <!-- Sponsors Section (Desplegable) -->
+                <div class="accordion-content" id="sponsors-2021">
+                    <div class="sponsors-section">
                     <h3>Sponsors y Colaboradores</h3>
                     <div class="sponsors-grid">
                         <div class="sponsor-logo">
@@ -657,8 +705,13 @@
                             <p>SEU</p>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <div class="cta-content">
