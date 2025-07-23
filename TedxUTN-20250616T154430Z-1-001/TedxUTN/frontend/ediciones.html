@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>    <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ediciones - TEDxUTN</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -52,6 +53,7 @@
                     <span class="edition-date">4 de Octubre, 2024</span>
                 </div>
                 
+                <!-- Información general del evento (siempre visible) -->
                 <div class="edition-content">
                     <div class="edition-info">
                         <p>La edición 2024 fue un evento que redefinió lo que consideramos inalcanzable. Lleno de charlas inspiradoras y emocionantes, nuestros oradores guiaron a los asistentes a través de experiencias transformadoras que los hicieron replantear su presente.</p>
@@ -83,122 +85,141 @@
                     </div>
                 </div>
 
-                <!-- Separador visual -->
-                <div class="section-separator"></div>
+                <!-- Botones de acordeón -->
+                <div class="accordion-buttons">
+                    <button class="accordion-btn" data-target="oradores-2024">
+                        <div class="btn-content">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Ver Oradores</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="accordion-btn" data-target="sponsors-2024">
+                        <div class="btn-content">
+                            <i class="fas fa-handshake"></i>
+                            <span>Ver Sponsors</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
 
-                <!-- Speakers Section -->
-                <div class="speakers-section">
-                    <h3>Oradores Destacados</h3>
-                    <div class="speakers-grid">
-                        <div class="speaker-card">
-                            <img src="./images/Edicion2024/Oradores/LucasSalim.JPG" alt="Lucas Salim">
-                            <h4>Lucas Salim</h4>
-                            <p>CEO & Fundador de Grupo Proaco</p>
-                        </div>
-                        <div class="speaker-card">
-                            <img src="./images/Edicion2024/Oradores/NORMA_QUEVEDO.jpg" alt="Norma Quevedo">
-                            <h4>Norma Quevedo</h4>
-                            <p>Comunicadora Profesional, locutora y actriz</p>
-                        </div>
-                        <div class="speaker-card">
-                            <img src="./images/Edicion2024/Oradores/Sergio_Cusmai.png" alt="Sergio Cusmai" style="object-position: center 20%;">
-                            <h4>Sergio Cusmai</h4>
-                            <p>Chief Executive Officer at Alpha-G</p>
-                        </div>
-                        <div class="speaker-card">
-                            <img src="./images/Edicion2024/Oradores/JULIA_MENSA.jpeg" alt="Julia Mensa">
-                            <h4>Julia Mensa</h4>
-                            <p>Cofundadora y CEO de Nunatak Biotech</p>
-                        </div>
-                        <div class="speaker-card">
-                            <img src="./images/Edicion2024/Oradores/GIANNA_MASTROLINARDO.jpg" alt="Gianna Mastrolinardo" style="object-position: center 30%;">
-                            <h4>Gianna Mastrolinardo</h4>
-                            <p>Estudiante de Ciencia Política en la UNC y activista por los derechos de las personas con discapacidades</p>
-                        </div>
-                        <div class="speaker-card">
-                            <img src="./images/Edicion2024/Oradores/GUILLERMO_GUTIERREZ.jpg" alt="Guillermo Gutierrez" style="object-position: center 25%;">
-                            <h4>Guillermo Gutierrez</h4>
-                            <p>Ingeniero Electrónico y Mag. en ingeniería de control automático</p>
-                        </div>
-                        <div class="speaker-card">
-                            <img src="./images/Edicion2024/Oradores/NARDO_ESCANILLA.JPG" alt="NARDO_ESCANILLA" style="object-position: center 35%;">
-                            <h4>Nardo Escanilla</h4>
-                            <p>Comediante y actor</p>
+                <!-- Speakers Section (Desplegable) -->
+                <div class="accordion-content" id="oradores-2024">
+                    <div class="speakers-section">
+                        <h3>Oradores Destacados</h3>
+                        <div class="speakers-grid">
+                            <div class="speaker-card">
+                                <img src="./images/Edicion2024/Oradores/LucasSalim.JPG" alt="Lucas Salim">
+                                <h4>Lucas Salim</h4>
+                                <p>CEO & Fundador de Grupo Proaco</p>
+                            </div>
+                            <div class="speaker-card">
+                                <img src="./images/Edicion2024/Oradores/NORMA_QUEVEDO.jpg" alt="Norma Quevedo">
+                                <h4>Norma Quevedo</h4>
+                                <p>Comunicadora Profesional, locutora y actriz</p>
+                            </div>
+                            <div class="speaker-card">
+                                <img src="./images/Edicion2024/Oradores/Sergio_Cusmai.png" alt="Sergio Cusmai" style="object-position: center 20%;">
+                                <h4>Sergio Cusmai</h4>
+                                <p>Chief Executive Officer at Alpha-G</p>
+                            </div>
+                            <div class="speaker-card">
+                                <img src="./images/Edicion2024/Oradores/JULIA_MENSA.jpeg" alt="Julia Mensa">
+                                <h4>Julia Mensa</h4>
+                                <p>Cofundadora y CEO de Nunatak Biotech</p>
+                            </div>
+                            <div class="speaker-card">
+                                <img src="./images/Edicion2024/Oradores/GIANNA_MASTROLINARDO.jpg" alt="Gianna Mastrolinardo" style="object-position: center 30%;">
+                                <h4>Gianna Mastrolinardo</h4>
+                                <p>Estudiante de Ciencia Política en la UNC y activista por los derechos de las personas con discapacidades</p>
+                            </div>
+                            <div class="speaker-card">
+                                <img src="./images/Edicion2024/Oradores/GUILLERMO_GUTIERREZ.jpg" alt="Guillermo Gutierrez" style="object-position: center 25%;">
+                                <h4>Guillermo Gutierrez</h4>
+                                <p>Ingeniero Electrónico y Mag. en ingeniería de control automático</p>
+                            </div>
+                            <div class="speaker-card">
+                                <img src="./images/Edicion2024/Oradores/NARDO_ESCANILLA.JPG" alt="NARDO_ESCANILLA" style="object-position: center 35%;">
+                                <h4>Nardo Escanilla</h4>
+                                <p>Comediante y actor</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sponsors Section -->
-                <div class="sponsors-section">
-                    <h3>Sponsors y Colaboradores</h3>
-                    <div class="sponsors-grid">
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Utn_Cordoba2.png" alt="Universidad Tecnológica Nacional Córdoba">
-                            <p>UTN Córdoba</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/SEU.png" alt="Secretaría de Extension Universitaria UTN-FRC">
-                            <p>SEU</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Aguiar_y_Asoc.png" alt="Aguiar & Asoc.">
-                            <p>Aguiar & Asoc.</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/itlg2.png" alt="itlg">
-                            <p>ITLG</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Cofactory.jpg" alt="Cofactory">
-                            <p>Cofactory</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/RVN_logo.png" alt="RVN">
-                            <p>RVN</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Indoors.jpg" alt="indoors">
-                            <p>Indoors</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Grupo_Kumar.png" alt="Grupo_Kumar">
-                            <p>Grupo Kumar</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Dloss.png" alt="Dloss">
-                            <p>Dloss</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Pepsi.png" alt="Pepsi">
-                            <p>Pepsi</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Warner_Bros2.png" alt="Warner_Bros">
-                            <p>Warner Bros</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/McDonalds.png" alt="McDonalds">
-                            <p>McDonald's</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Sportcom2.jpeg" alt="Sportcom">
-                            <p>Sportcom</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Alumac.png" alt="Alumac">
-                            <p>Alumac</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Movisuelos.png" alt="Movisuelos">
-                            <p>Movisuelos</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Chammas2.jpeg" alt="Chammas">
-                            <p>Chammas</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2024/Sponsors/Global.png" alt="Global">
-                            <p>Global</p>
+                <!-- Sponsors Section (Desplegable) -->
+                <div class="accordion-content" id="sponsors-2024">
+                    <div class="sponsors-section">
+                        <h3>Sponsors y Colaboradores</h3>
+                        <div class="sponsors-grid">
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Utn_Cordoba2.png" alt="Universidad Tecnológica Nacional Córdoba">
+                                <p>UTN Córdoba</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/SEU.png" alt="Secretaría de Extension Universitaria UTN-FRC">
+                                <p>SEU</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Aguiar_y_Asoc.png" alt="Aguiar & Asoc.">
+                                <p>Aguiar & Asoc.</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/itlg2.png" alt="itlg">
+                                <p>ITLG</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Cofactory.jpg" alt="Cofactory">
+                                <p>Cofactory</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/RVN_logo.png" alt="RVN">
+                                <p>RVN</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Indoors.jpg" alt="indoors">
+                                <p>Indoors</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Grupo_Kumar.png" alt="Grupo_Kumar">
+                                <p>Grupo Kumar</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Dloss.png" alt="Dloss">
+                                <p>Dloss</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Pepsi.png" alt="Pepsi">
+                                <p>Pepsi</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Warner_Bros2.png" alt="Warner_Bros">
+                                <p>Warner Bros</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/McDonalds.png" alt="McDonalds">
+                                <p>McDonald's</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Sportcom2.jpeg" alt="Sportcom">
+                                <p>Sportcom</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Alumac.png" alt="Alumac">
+                                <p>Alumac</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Movisuelos.png" alt="Movisuelos">
+                                <p>Movisuelos</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Chammas2.jpeg" alt="Chammas">
+                                <p>Chammas</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2024/Sponsors/Global.png" alt="Global">
+                                <p>Global</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -241,10 +262,27 @@
                     </div>
                 </div>
 
-                <!-- Separador visual -->
-                <div class="section-separator"></div>
+                <!-- Botones de acordeón -->
+                <div class="accordion-buttons">
+                    <button class="accordion-btn" data-target="oradores-2023">
+                        <div class="btn-content">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Ver Oradores</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="accordion-btn" data-target="sponsors-2023">
+                        <div class="btn-content">
+                            <i class="fas fa-handshake"></i>
+                            <span>Ver Sponsors</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
 
-                <div class="speakers-section">
+                <!-- Speakers Section (Desplegable) -->
+                <div class="accordion-content" id="oradores-2023">
+                    <div class="speakers-section">
                     <h3>Speakers Destacados</h3>
                     <div class="speakers-grid">
                         <div class="speaker-card">
@@ -303,9 +341,12 @@
                             <p>Corredora de montaña</p>
                         </div>
                     </div>
+                    </div>
                 </div>
 
-                <div class="sponsors-section">
+                <!-- Sponsors Section (Desplegable) -->
+                <div class="accordion-content" id="sponsors-2023">
+                    <div class="sponsors-section">
                     <h3>Sponsors y Colaboradores</h3>
                     <div class="sponsors-grid">
                         <div class="sponsor-logo">
@@ -401,6 +442,7 @@
                             <p>Aliaga</p>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
 
@@ -438,9 +480,28 @@
                         </div>
                     </div>
                 </div>
-                <!-- Separador visual -->
-                <div class="section-separator"></div>
-                <div class="speakers-section">
+                
+                <!-- Botones de acordeón -->
+                <div class="accordion-buttons">
+                    <button class="accordion-btn" data-target="oradores-2022">
+                        <div class="btn-content">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Ver Oradores</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="accordion-btn" data-target="sponsors-2022">
+                        <div class="btn-content">
+                            <i class="fas fa-handshake"></i>
+                            <span>Ver Sponsors</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <!-- Speakers Section (Desplegable) -->
+                <div class="accordion-content" id="oradores-2022">
+                    <div class="speakers-section">
                     <h3>Speakers Destacados</h3>
                     <div class="speakers-grid">
                         <div class="speaker-card">
@@ -490,36 +551,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="sponsors-section">
-                    <h3>Sponsors y Colaboradores</h3>
-                    <div class="sponsors-grid">
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/AguiarYAsoc.jpg" alt="Aguiar & Asoc.">
-                            <p>Aguiar & Asoc.</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/Dinamic.png" alt="Dinamic">
-                            <p>Dinamic</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/DLOSS.jpg" alt="DLOSS">
-                            <p>DLOSS</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/IvecoGroup.png" alt="Iveco Group">
-                            <p>Iveco Group</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/AVEIT.png" alt="AVEIT">
-                            <p>AVEIT</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/utn.jpeg" alt="UTN">
-                            <p>UTN</p>
-                        </div>
-                        <div class="sponsor-logo">
-                            <img src="./images/Edicion2022/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.png" alt="SEU">
-                            <p>SEU</p>
+                </div>
+
+                <!-- Sponsors Section (Desplegable) -->
+                <div class="accordion-content" id="sponsors-2022">
+                    <div class="sponsors-section">
+                        <h3>Sponsors y Colaboradores</h3>
+                        <div class="sponsors-grid">
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/AguiarYAsoc.jpg" alt="Aguiar & Asoc.">
+                                <p>Aguiar & Asoc.</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/Dinamic.png" alt="Dinamic">
+                                <p>Dinamic</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/DLOSS.jpg" alt="DLOSS">
+                                <p>DLOSS</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/IvecoGroup.png" alt="Iveco Group">
+                                <p>Iveco Group</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2021/Sponsors/AVEIT.png" alt="AVEIT">
+                                <p>AVEIT</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2021/Sponsors/utn.jpeg" alt="UTN">
+                                <p>UTN</p>
+                            </div>
+                            <div class="sponsor-logo">
+                                <img src="./images/Edicion2022/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.png" alt="SEU">
+                                <p>SEU</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -555,9 +621,28 @@
                         </div>
                     </div>
                 </div>
-                <!-- Separador visual -->
-                <div class="section-separator"></div>
-                <div class="speakers-section">
+                
+                <!-- Botones de acordeón -->
+                <div class="accordion-buttons">
+                    <button class="accordion-btn" data-target="oradores-2021">
+                        <div class="btn-content">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>Ver Oradores</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="accordion-btn" data-target="sponsors-2021">
+                        <div class="btn-content">
+                            <i class="fas fa-handshake"></i>
+                            <span>Ver Sponsors</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <!-- Speakers Section (Desplegable) -->
+                <div class="accordion-content" id="oradores-2021">
+                    <div class="speakers-section">
                     <h3>Speakers Destacados</h3>
                     <div class="speakers-grid">
                         <div class="speaker-card">
@@ -591,8 +676,12 @@
                             <p>Marketing and Business Development</p>
                         </div>
                     </div>
+                    </div>
                 </div>
-                <div class="sponsors-section">
+
+                <!-- Sponsors Section (Desplegable) -->
+                <div class="accordion-content" id="sponsors-2021">
+                    <div class="sponsors-section">
                     <h3>Sponsors y Colaboradores</h3>
                     <div class="sponsors-grid">
                         <div class="sponsor-logo">
@@ -616,8 +705,13 @@
                             <p>SEU</p>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <div class="cta-content">

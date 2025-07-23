@@ -767,3 +767,135 @@
         max-width: 280px;
     }
 }
+
+/* Accordion Styles */
+.accordion-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.accordion-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: linear-gradient(135deg, #e53e3e, #c53030);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 200px;
+}
+
+.accordion-btn:hover {
+    background: linear-gradient(135deg, #c53030, #9c2626);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
+}
+
+.accordion-btn.active {
+    background: linear-gradient(135deg, #9c2626, #742727);
+}
+
+.accordion-btn i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-btn.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-btn i:first-child {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.accordion-btn:hover i:first-child {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.accordion-btn i:last-child {
+    margin-left: auto;
+    font-size: 0.9rem;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-content i {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.accordion-btn:hover .btn-content i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Accordion Content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: white;
+}
+
+.accordion-content.active {
+    max-height: 2000px; /* Ajustar según contenido */
+}
+
+/* Responsive accordion buttons */
+@media (max-width: 768px) {
+    .accordion-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .accordion-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer Override for Ediciones Page */
+.footer {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #222;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
