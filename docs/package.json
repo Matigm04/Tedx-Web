@@ -1,0 +1,29 @@
+{
+  "name": "tedx-utn-cordoba-docs",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de TEDxUTNCórdoba - Documentación",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --host=localhost --port=3001 --open=/index.html",
+    "start": "live-server --host=localhost --port=3001 --open=/index.html",
+    "serve": "live-server --host=localhost --port=8081 --open=/index.html"
+  },
+  "keywords": [
+    "tedx",
+    "utn",
+    "cordoba",
+    "website",
+    "frontend",
+    "docs"
+  ],
+  "author": "TEDxUTNCórdoba Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Matigm04/Tedx-Web.git"
+  }
+}
