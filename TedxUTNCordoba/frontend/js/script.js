@@ -21,8 +21,8 @@ const sponsorItems = document.querySelectorAll('.sponsor-item');
 const sponsorDots = document.querySelectorAll('.sponsor-dot');
 const sponsorPrevBtn = document.getElementById('sponsorsPrev');
 const sponsorNextBtn = document.getElementById('sponsorsNext');
-const TRANSITION_DURATION = 2000; // 2000ms (2 seconds) for all transitions
-const AUTO_ADVANCE_DELAY = 4000; // 4 seconds between auto advances (2s transition + 2s pause)
+const TRANSITION_DURATION = 800; // 800ms (0.8 seconds) for all transitions - Más rápido y fluido
+const AUTO_ADVANCE_DELAY = 2500; // 2.5 seconds between auto advances - Cambio automático más rápido
 
 if (sponsorItems.length > 0) {
     function showSponsor(newIndex, direction = 'next') {
@@ -48,8 +48,8 @@ if (sponsorItems.length > 0) {
         
         // Smooth transition without class jumping
         requestAnimationFrame(() => {
-            currentItem.style.transition = 'transform 2s ease-in-out, opacity 2s ease-in-out';
-            newItem.style.transition = 'transform 2s ease-in-out, opacity 2s ease-in-out';
+            currentItem.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
+            newItem.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
             
             // Animate out current item
             if (direction === 'next') {

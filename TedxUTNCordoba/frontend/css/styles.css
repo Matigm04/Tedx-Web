@@ -490,7 +490,7 @@ body {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .sponsor-item:hover img {
@@ -512,7 +512,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     z-index: 10;
 }
 
@@ -542,7 +542,7 @@ body {
     border-radius: 50%;
     background: #ccc;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .sponsor-dot.active {
@@ -558,6 +558,7 @@ body {
 .next-edition {
     padding: 80px 0;
     background: white;
+    overflow: hidden; /* Evita cualquier desbordamiento que pueda causar espacios */
 }
 
 .edition-card-home {
@@ -583,6 +584,7 @@ body {
     height: 400px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block; /* Elimina espacios en línea debajo de la imagen */
 }
 
 .edition-card-home:hover .edition-image img {
@@ -596,9 +598,9 @@ body {
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, 
-        rgba(155, 76, 60, 0.9) 0%, 
-        rgba(231, 76, 60, 0.8) 20%, 
-        rgba(0, 0, 0, 0.6) 100%);
+        rgba(155, 76, 60, 0.7) 0%, 
+        rgba(231, 76, 60, 0.6) 20%, 
+        rgba(0, 0, 0, 0.4) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -693,6 +695,29 @@ body {
         padding: 60px 0;
     }
 
+    .edition-card-home {
+        margin: 0 25px 0 15px; /* Más margen derecho, menos izquierdo - mueve la caja hacia la izquierda */
+        max-width: none; /* Permite que use todo el ancho disponible menos los márgenes */
+        border-radius: 15px; /* Bordes más pequeños para móvil */
+    }
+
+    .edition-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .edition-image img {
+        width: 100%;
+        height: 300px; /* Altura más pequeña para móvil */
+        object-fit: cover;
+        object-position: center;
+        display: block; /* Elimina espacios en línea debajo de la imagen */
+    }
+
+    .edition-overlay {
+        padding: 20px; /* Padding interno para el contenido del overlay */
+    }
+
     .edition-info h3 {
         font-size: 2rem;
     }
@@ -700,6 +725,11 @@ body {
     .edition-date,
     .edition-location {
         font-size: 1.1rem;
+    }
+
+    .edition-btn {
+        padding: 12px 25px; /* Botón más pequeño para móvil */
+        font-size: 1rem;
     }
 }
 
@@ -714,5 +744,32 @@ body {
 
     .sponsors-slider {
         max-width: 280px;
+    }
+
+    /* Estilos adicionales para próxima edición en pantallas muy pequeñas */
+    .edition-card-home {
+        margin: 0 20px 0 10px; /* Más margen derecho, menos izquierdo - mueve la caja hacia la izquierda */
+        border-radius: 12px;
+    }
+
+    .edition-image img {
+        height: 250px; /* Altura más pequeña para pantallas muy pequeñas */
+    }
+
+    .edition-info h3 {
+        font-size: 1.8rem; /* Texto aún más pequeño */
+        margin-bottom: 15px;
+    }
+
+    .edition-date,
+    .edition-location {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+    .edition-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        margin-top: 15px;
     }
 }

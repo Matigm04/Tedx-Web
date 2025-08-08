@@ -2,8 +2,16 @@
 
 .page-hero {
     height: 60vh;
-    background: url('../images/Logo negro Tedxutncordoba.jpg');
-    background-size: contain;
+    background: linear-gradient(
+                    135deg,
+                    rgba(0, 0, 0, 0.6) 0%,
+                    rgba(0, 0, 0, 0.3) 30%,
+                    rgba(0, 0, 0, 0.1) 50%,
+                    rgba(0, 0, 0, 0.3) 70%,
+                    rgba(0, 0, 0, 0.6) 100%
+                ), 
+                url('../images/Logo negro Tedxutncordoba.jpg');
+    background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #000000;
