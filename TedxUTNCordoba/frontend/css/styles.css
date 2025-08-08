@@ -595,9 +595,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, 
-        rgba(231, 76, 60, 0.9) 0%, 
-        rgba(231, 76, 60, 0.8) 50%, 
+    background: linear-gradient(135deg, 
+        rgba(155, 76, 60, 0.9) 0%, 
+        rgba(231, 76, 60, 0.8) 20%, 
         rgba(0, 0, 0, 0.6) 100%);
     display: flex;
     align-items: center;
@@ -625,7 +625,7 @@ body {
 
 .edition-date i,
 .edition-location i {
-    color: #E74C3C;
+    color: #ffc6c6;
 }
 
 .edition-btn {
