@@ -1,20 +1,21 @@
 {
-  "name": "tedx-utn-cordoba-docs",
+  "name": "tedx-utn-cordoba",
   "version": "1.0.0",
-  "description": "Sitio web oficial de TEDxUTNCórdoba - Documentación",
-  "main": "index.html",
+  "description": "Sitio web oficial de TEDxUTNCórdoba",
+  "main": "index.js",
   "scripts": {
-    "dev": "live-server --host=localhost --port=3001 --open=/index.html",
-    "start": "live-server --host=localhost --port=3001 --open=/index.html",
-    "serve": "live-server --host=localhost --port=8081 --open=/index.html"
+    "dev": "cd frontend && live-server --host=localhost --port=3000",
+    "dev-root": "live-server --host=localhost --port=3000 --open=frontend/index.html",
+    "start": "cd frontend && live-server --host=localhost --port=3000",
+    "build": "echo 'Build script - copy frontend files to public'",
+    "serve": "live-server --host=localhost --port=8080 --open=public/index.html"
   },
   "keywords": [
     "tedx",
     "utn",
     "cordoba",
     "website",
-    "frontend",
-    "docs"
+    "frontend"
   ],
   "author": "TEDxUTNCórdoba Team",
   "license": "MIT",
