@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,89 +68,233 @@
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
+    <!-- Registration Selection Section -->
     <section class="registration">
         <div class="container">
-            <div class="coming-soon-content">
-                <!-- Main Coming Soon Message -->
-                <div class="coming-soon-main">
-                    <div class="coming-soon-card">
-                        <div class="coming-soon-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h2>¡Inscripciones Próximamente! </h2>
-                        <h2>🚀</h2>
-                        <p class="coming-soon-subtitle">Estamos trabajando para traerte una experiencia de inscripción increíble</p>
+            <div class="registration-content">
+                <!-- Event Title Card with Options Inside - Centered Layout -->
+                <div class="event-title-card-fullwidth">
+                    <div class="event-logo">
+                        <h1>TEDxUTNCórdoba 2025</h1>
+                        <p class="event-theme">"Ideas en voz alta"</p>
+                    </div>
+                    
+                    <!-- Registration Selection Text inside white box -->
+                    <div class="registration-text-box">
+                        <h2>Elige tu método de inscripción</h2>
+                        <p class="options-subtitle">Selecciona la opción que mejor se adapte a ti</p>
                         
-                        <div class="coming-soon-message">
-                            <p>Las inscripciones para la próxima edición de TEDxUTNCórdoba se habilitarán muy pronto. Mientras tanto, te invitamos a seguirnos en nuestras redes sociales para estar al día con todas las novedades y ser el primero en enterarte cuando abramos las inscripciones.</p>
-                        </div>
-
-                        <!-- Social Media Call to Action -->
-                        <div class="social-cta">
-                            <h3><i class="fas fa-bell"></i></h3>
-                                <h3>¡No te pierdas ninguna novedad!</h3>
-                            <p>Seguinos en Instagram para enterarte de todas las novedades:</p>
-                            
-                            <div class="instagram-link">
-                                <a href="https://www.instagram.com/tedxutncordoba/" target="_blank" class="instagram-btn">
-                                    <i class="fab fa-instagram-square"></i>
-                                    @tedxutncordoba
-                                </a>
-                            </div>
-                            
-                            <div class="social-benefits">
-                                <div class="benefit-item">
-                                    <i class="fas fa-calendar-check"></i>
-                                    <span>Fechas de inscripción</span>
+                        <!-- Options inside the white box -->
+                        <div class="options-grid-embedded">
+                            <!-- Entrada Gratuita -->
+                            <div class="option-card-embedded free-entry">
+                                <div class="option-header-embedded">
+                                    <i class="fas fa-gift"></i>
+                                    <h3>Entrada Gratuita</h3>
+                                    <p class="option-price-embedded">GRATIS</p>
                                 </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-users"></i>
-                                    <span>Información sobre oradores</span>
+                                <div class="option-content-embedded">
+                                    <p class="option-description">Acceso completo al evento mediante selección por cuestionario</p>
+                                    <div class="option-note">
+                                        <i class="fas fa-info-circle"></i>
+                                        <p>Cupos limitados. La selección está sujeta a disponibilidad y criterios de la organización.</p>
+                                    </div>
+                                    <button class="option-btn-embedded primary" onclick="showQuestionnaire()">
+                                        <i class="fas fa-clipboard-list"></i>
+                                        Completar Formulario
+                                    </button>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Event Preview -->
-                        <div class="event-preview">
-                            <h3><i class="fas fa-eye"></i> ¿Qué puedes esperar?</h3>
-                            <div class="preview-grid">
-                                <div class="preview-item">
-                                    <i class="fas fa-microphone"></i>
-                                    <h4>Charlas Inspiradoras</h4>
-                                    <p>Ideas que transforman perspectivas</p>
+                            <!-- Entradas Anticipadas -->
+                            <div class="option-card-embedded paid-entry">
+                                <div class="option-header-embedded">
+                                    <i class="fas fa-star"></i>
+                                    <h3>Entradas Anticipadas</h3>
+                                    <p class="option-price-embedded">$15.000</p>
                                 </div>
-                                <div class="preview-item">
-                                    <i class="fas fa-network-wired"></i>
-                                    <h4>Networking</h4>
-                                    <p>Conecta con la comunidad UTN</p>
-                                </div>
-                                <div class="preview-item">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <h4>Innovación</h4>
-                                    <p>Descubre nuevas ideas y proyectos</p>
-                                </div>
-                                <div class="preview-item">
-                                    <i class="fas fa-certificate"></i>
-                                    <h4>Experiencia Única</h4>
-                                    <p>Una tarde que recordarás</p>
+                                <div class="option-content-embedded">
+                                    <p class="option-description">Asegura tu lugar con entrada garantizada</p>
+                                    <div class="option-note premium">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <p>Garantiza tu participación. Acceso prioritario y beneficios exclusivos.</p>
+                                    </div>
+                                    <button class="option-btn-embedded secondary" onclick="redirectToTickets()">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Comprar Entrada
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>10 de Octubre, 2025</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>UTN Facultad Regional Córdoba</span>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Contact Information -->
-                        <div class="contact-preview">
-                            <h3><i class="fas fa-envelope"></i> ¡Contactanos! </h3>
-                                <div class="contact-method">
-                                    <i class="fab fa-instagram-square"></i>
-                                    <span>@tedxutncordoba</span>
+                <!-- Questionnaire Section (Initially Hidden) -->
+                <div id="questionnaire-section" class="questionnaire-section" style="display: none;">
+                    <div class="questionnaire-card">
+                        <div class="questionnaire-header">
+                            <h3><i class="fas fa-clipboard-list"></i> Cuestionario de Selección</h3>
+                            <p>Completa la siguiente información para aplicar a tu entrada gratuita</p>
+                            <button class="close-questionnaire" onclick="hideQuestionnaire()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <form id="registration-form" class="questionnaire-form">
+                            <div class="form-section">
+                                <h4>Información Personal</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre completo *</label>
+                                        <input type="text" id="nombre" name="nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
                                 </div>
-                            <div class="contact-methods">
-                                <div class="contact-method">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>tedxutncordoba@frc.utn.edu.ar</span>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="telefono">Teléfono *</label>
+                                        <input type="tel" id="telefono" name="telefono" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edad">Edad</label>
+                                        <select id="edad" name="edad">
+                                            <option value="">Selecciona tu rango de edad</option>
+                                            <option value="18-25">18-25 años</option>
+                                            <option value="26-35">26-35 años</option>
+                                            <option value="36-45">36-45 años</option>
+                                            <option value="46-55">46-55 años</option>
+                                            <option value="56+">56+ años</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="form-section">
+                                <h4>Información Académica/Profesional</h4>
+                                <div class="form-group">
+                                    <label for="vinculo">¿Cuál es tu vínculo con la UTN? *</label>
+                                    <select id="vinculo" name="vinculo" required>
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="estudiante">Estudiante UTN</option>
+                                        <option value="egresado">Egresado UTN</option>
+                                        <option value="docente">Docente UTN</option>
+                                        <option value="no-docente">Personal no docente UTN</option>
+                                        <option value="externo">Externo a UTN</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="carrera">Carrera/Especialidad</label>
+                                    <input type="text" id="carrera" name="carrera" placeholder="Ej: Ingeniería en Sistemas, Administración, etc.">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ocupacion">Ocupación actual</label>
+                                    <input type="text" id="ocupacion" name="ocupacion" placeholder="Ej: Estudiante, Desarrollador, Gerente, etc.">
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4>Motivación</h4>
+                                <div class="form-group">
+                                    <label for="motivacion">¿Por qué quieres asistir a TEDxUTNCórdoba? *</label>
+                                    <textarea id="motivacion" name="motivacion" required 
+                                        placeholder="Cuéntanos qué te motiva a participar en este evento y qué esperas obtener de la experiencia..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interes">¿Qué tipo de charlas te interesan más?</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="interes[]" value="tecnologia">
+                                            <span>Tecnología e Innovación</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="interes[]" value="emprendimiento">
+                                            <span>Emprendimiento</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="interes[]" value="ciencia">
+                                            <span>Ciencia y Investigación</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="interes[]" value="arte">
+                                            <span>Arte y Creatividad</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="interes[]" value="social">
+                                            <span>Impacto Social</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="interes[]" value="liderazgo">
+                                            <span>Liderazgo</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4>Términos y Condiciones</h4>
+                                <div class="form-group">
+                                    <label class="checkbox-item terms">
+                                        <input type="checkbox" name="terminos" required>
+                                        <span>Acepto los términos y condiciones del evento. Entiendo que la selección está sujeta a disponibilidad y criterios de la organización.</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="checkbox-item terms">
+                                        <input type="checkbox" name="privacidad" required>
+                                        <span>Autorizo el uso de mi imagen durante el evento para fines promocionales de TEDxUTNCórdoba.</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" onclick="hideQuestionnaire()">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Volver
+                                </button>
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Enviar Solicitud
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Information Section -->
+                <div class="registration-info">
+                    <div class="info-cards">
+                        <div class="info-card-reg">
+                            <i class="fas fa-clock"></i>
+                            <h4>Proceso de Selección</h4>
+                            <p>Para entradas gratuitas, recibirás una confirmación en un plazo de 5-7 días hábiles tras el cierre de inscripciones.</p>
+                        </div>
+                        <div class="info-card-reg">
+                            <i class="fas fa-users"></i>
+                            <h4>Cupos Limitados</h4>
+                            <p>Las entradas gratuitas tienen cupos limitados. Las entradas anticipadas garantizan tu lugar en el evento.</p>
+                        </div>
+                        <div class="info-card-reg">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Confirmación</h4>
+                            <p>Te enviaremos un email de confirmación con todos los detalles del evento y las instrucciones de acceso.</p>
                         </div>
                     </div>
                 </div>
@@ -194,5 +339,84 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Funciones para manejar las inscripciones
+        function showQuestionnaire() {
+            const questionnaireSection = document.getElementById('questionnaire-section');
+            questionnaireSection.style.display = 'block';
+            questionnaireSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideQuestionnaire() {
+            const questionnaireSection = document.getElementById('questionnaire-section');
+            questionnaireSection.style.display = 'none';
+            document.querySelector('.registration-options').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function redirectToTickets() {
+            // Aquí puedes cambiar la URL por la web de venta de entradas que elijas
+            const ticketUrl = 'https://eventor.com.ar/tedxutncordoba'; // URL de ejemplo
+            
+            // Mostrar confirmación antes de redirigir
+            if (confirm('¿Quieres continuar a la página de compra de entradas? Serás redirigido a Eventor.')) {
+                window.open(ticketUrl, '_blank');
+            }
+        }
+
+        // Manejar el envío del formulario
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar que se hayan seleccionado al menos un área de interés
+            const interessChecked = document.querySelectorAll('input[name="interes[]"]:checked');
+            
+            // Recopilar datos del formulario
+            const formData = new FormData(this);
+            const interests = [];
+            interessChecked.forEach(checkbox => interests.push(checkbox.value));
+            
+            // Simular envío (aquí conectarías con tu backend)
+            const registrationData = {
+                nombre: formData.get('nombre'),
+                email: formData.get('email'),
+                telefono: formData.get('telefono'),
+                edad: formData.get('edad'),
+                vinculo: formData.get('vinculo'),
+                carrera: formData.get('carrera'),
+                ocupacion: formData.get('ocupacion'),
+                motivacion: formData.get('motivacion'),
+                intereses: interests,
+                terminos: formData.get('terminos'),
+                privacidad: formData.get('privacidad')
+            };
+
+            // Mostrar mensaje de confirmación
+            alert('¡Gracias por tu solicitud! Hemos recibido tu información y te contactaremos en un plazo de 5-7 días hábiles para confirmar tu participación.');
+            
+            // Limpiar formulario y ocultar cuestionario
+            this.reset();
+            hideQuestionnaire();
+            
+            console.log('Datos de registro:', registrationData);
+            
+            // Aquí enviarías los datos a tu servidor
+            // fetch('/api/registrations', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(registrationData)
+            // });
+        });
+
+        // Validación en tiempo real para campos requeridos
+        document.querySelectorAll('input[required], select[required], textarea[required]').forEach(field => {
+            field.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.classList.add('error');
+                } else {
+                    this.classList.remove('error');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
