@@ -1,0 +1,42 @@
+{
+  "name": "tedx-utn-cordoba",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de TEDxUTNCórdoba",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "tedx",
+    "utn",
+    "cordoba",
+    "website",
+    "frontend"
+  ],
+  "author": "TEDxUTNCórdoba Team",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "lucide-react": "^0.539.0",
+    "next": "14.2.5",
+    "postcss": "^8.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Matigm04/Tedx-Web.git"
+  }
+}
