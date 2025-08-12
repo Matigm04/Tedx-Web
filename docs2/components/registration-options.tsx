@@ -49,11 +49,11 @@ export default function RegistrationOptions() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative min-h-[60vh] flex items-center justify-center">
+      <div className="relative min-h-[45vh] md:min-h-[70vh] flex items-center justify-center">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-no-repeat [--bg-position-mobile:center_-280%] [--bg-position-desktop:center_42%] bg-[position:var(--bg-position-mobile)] md:bg-[position:var(--bg-position-desktop)]"
           style={{
-            backgroundImage: "url('/placeholder.svg?height=600&width=1200')",
+            backgroundImage: "url('/images/Logo negro Tedxutncordoba.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
