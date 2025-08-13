@@ -1,10 +1,13 @@
 "use client"
 
-import { useState } from "react"
-import { Calendar, Clock, MapPin, Users, CreditCard, FileText, ExternalLink, CheckCircle } from "lucide-react"
+import { useState, useRef } from "react"
+import { Calendar, Clock, MapPin, Users, CreditCard, FileText, ExternalLink, CheckCircle, Loader2 } from "lucide-react"
 
 export default function RegistrationOptions() {
   const [selectedOption, setSelectedOption] = useState<"free" | "paid" | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const formRef = useRef<HTMLElement>(null)
   const [formData, setFormData] = useState({
     // Personal info
     apellidos: "",
@@ -37,6 +40,17 @@ export default function RegistrationOptions() {
     window.open("https://eventor.com.ar/share/jTh0KwaupdGS", "_blank")
   }
 
+  const handleFreeRegistration = () => {
+    setSelectedOption("free")
+    // Scroll automático al formulario después de un pequeño delay para que se renderice
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' 
+      })
+    }, 100)
+  }
+
   const handleCheckboxChange = (field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
@@ -44,6 +58,53 @@ export default function RegistrationOptions() {
         ? (prev[field as keyof typeof prev] as string[]).filter((item) => item !== value)
         : [...(prev[field as keyof typeof prev] as string[]), value],
     }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const response = await fetch('/api/inscripciones', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        // Limpiar formulario
+        setFormData({
+          apellidos: "",
+          dni: "",
+          edad: "",
+          email: "",
+          celular: "",
+          conoceTED: "",
+          participoTEDx: "",
+          perteneceUTN: "",
+          comunidadUTN: "",
+          soy: "",
+          especialidad: "",
+          legajo: "",
+          anoCursando: [],
+          graduadoCarrera: "",
+          materiaActual: "",
+          actividadesFacultad: "",
+        })
+        // El mensaje se mantiene hasta que el usuario recargue la página
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error('Error al enviar formulario:', error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -126,7 +187,7 @@ export default function RegistrationOptions() {
                 </div>
 
                 <button
-                  onClick={() => setSelectedOption("free")}
+                  onClick={handleFreeRegistration}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 mt-auto"
                 >
                   <FileText className="w-5 h-5" />
@@ -174,7 +235,7 @@ export default function RegistrationOptions() {
 
       {/* Free Registration Form */}
       {selectedOption === "free" && (
-        <section className="py-20 bg-white">
+        <section ref={formRef} className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-5">
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
@@ -182,7 +243,7 @@ export default function RegistrationOptions() {
                 <p className="text-gray-600">Completa todos los campos para participar del proceso de selección</p>
               </div>
 
-              <form className="space-y-8">
+              <form className="space-y-8" onSubmit={handleSubmit}>
                 {/* Personal Information */}
                 <div className="space-y-6">
                   <h4 className="text-lg font-semibold text-gray-900 border-b pb-2">Información Personal</h4>
@@ -615,15 +676,44 @@ export default function RegistrationOptions() {
                   </label>
                 </div>
 
-                <div className="text-center">
+                <div className="flex flex-col items-center">
                   <button
                     type="submit"
-                    className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                    disabled={isSubmitting}
+                    className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:hover:transform-none flex items-center justify-center gap-2 min-w-[200px] mx-auto"
                   >
-                    Enviar Inscripción
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      'Enviar Inscripción'
+                    )}
                   </button>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Al enviar este formulario, recibirás una confirmación por email
+
+                  {/* Mensajes de estado */}
+                  {submitStatus === "success" && (
+                    <div className="mt-6 p-6 bg-green-100 border border-green-400 text-green-700 rounded-lg max-w-md w-full">
+                      <div className="flex items-center gap-2 justify-center">
+                        <CheckCircle className="w-6 h-6" />
+                        <span className="font-semibold text-lg">¡Inscripción enviada exitosamente!</span>
+                      </div>
+                      <p className="text-sm mt-3 text-center">Tu inscripción ha sido guardada correctamente. Recibirás una confirmación pronto.</p>
+                    </div>
+                  )}
+
+                  {submitStatus === "error" && (
+                    <div className="mt-6 p-6 bg-red-100 border border-red-400 text-red-700 rounded-lg max-w-md w-full">
+                      <div className="flex items-center gap-2 justify-center">
+                        <span className="font-semibold text-lg">Error al enviar la inscripción</span>
+                      </div>
+                      <p className="text-sm mt-3 text-center">Por favor, inténtalo de nuevo o contacta con el organizador.</p>
+                    </div>
+                  )}
+
+                  <p className="text-sm text-gray-500 mt-4 text-center max-w-md">
+                    Al enviar este formulario, tus datos serán procesados para la gestión del evento
                   </p>
                 </div>
               </form>
