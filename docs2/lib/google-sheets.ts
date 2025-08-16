@@ -2,6 +2,7 @@ import { google } from 'googleapis';
 
 // Interface para los datos del formulario
 export interface FormData {
+  nombre: string;
   apellidos: string;
   dni: string;
   edad: string;
@@ -49,6 +50,7 @@ export class GoogleSheetsService {
       // Preparar los datos en el orden de las columnas
       const values = [[
         timestamp,
+        formData.nombre,
         formData.apellidos,
         formData.dni,
         formData.edad,
@@ -69,7 +71,7 @@ export class GoogleSheetsService {
 
       const response = await this.sheets.spreadsheets.values.append({
         spreadsheetId: this.spreadsheetId,
-        range: 'A:Q', // Columnas A hasta Q
+        range: 'A:R', // Columnas A hasta R (agregamos una columna más)
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
         requestBody: {
@@ -90,6 +92,7 @@ export class GoogleSheetsService {
     try {
       const headers = [
         'Timestamp',
+        'Nombre',
         'Apellidos',
         'DNI',
         'Edad',
@@ -110,7 +113,7 @@ export class GoogleSheetsService {
 
       const response = await this.sheets.spreadsheets.values.update({
         spreadsheetId: this.spreadsheetId,
-        range: 'A1:Q1',
+        range: 'A1:R1', // Actualizado para incluir la nueva columna
         valueInputOption: 'RAW',
         requestBody: {
           values: [headers],

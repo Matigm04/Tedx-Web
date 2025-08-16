@@ -278,9 +278,6 @@ const editions: Edition[] = [
     },
     gallery: [
       "/images/Edicion2021/Equipo.jpg",
-      "/images/Edicion2021/Indoors.jpg",
-      "/images/Carrusel1.jpg",
-      "/images/Carrusel2.jpg",
     ],
     speakers: [
       {
@@ -374,9 +371,9 @@ export default function EditionsSection() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className={`grid gap-4 ${edition.gallery.length === 1 ? 'grid-cols-1 justify-items-center mt-6 mb-6' : 'grid-cols-2'}`}>
                     {edition.gallery.map((image, index) => (
-                      <div key={index} className="relative h-32 rounded-lg overflow-hidden">
+                      <div key={index} className={`relative rounded-lg overflow-hidden ${edition.gallery.length === 1 ? 'h-56 w-96 max-w-full mx-auto' : 'h-32'}`}>
                         <Image
                           src={image || "/placeholder.svg"}
                           alt={`${edition.title} - ${index + 1}`}

@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     const formData: FormData = await request.json();
 
     // Validaciones básicas
-    if (!formData.apellidos || !formData.dni || !formData.email) {
+    if (!formData.nombre || !formData.apellidos || !formData.dni || !formData.email) {
       return NextResponse.json(
         { error: 'Faltan campos obligatorios' },
         { status: 400 }

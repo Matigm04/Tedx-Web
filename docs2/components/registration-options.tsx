@@ -10,6 +10,7 @@ export default function RegistrationOptions() {
   const formRef = useRef<HTMLElement>(null)
   const [formData, setFormData] = useState({
     // Personal info
+    nombre: "",
     apellidos: "",
     dni: "",
     edad: "",
@@ -78,6 +79,7 @@ export default function RegistrationOptions() {
         setSubmitStatus("success")
         // Limpiar formulario
         setFormData({
+          nombre: "",
           apellidos: "",
           dni: "",
           edad: "",
@@ -247,6 +249,18 @@ export default function RegistrationOptions() {
                 {/* Personal Information */}
                 <div className="space-y-6">
                   <h4 className="text-lg font-semibold text-gray-900 border-b pb-2">Información Personal</h4>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Nombre/s *</label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
+                      placeholder="Ingresa tu nombre"
+                      value={formData.nombre}
+                      onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                    />
+                  </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Apellido/s *</label>

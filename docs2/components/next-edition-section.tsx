@@ -15,7 +15,7 @@ export default function NextEditionSection() {
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <div className="relative h-96">
               <Image
-                src="/images/Banner tedx 2025"
+                src="/images/Edicion2024/Presentadores.jpg"
                 alt="TEDxUTNCórdoba 2025"
                 fill
                 className="object-cover"
@@ -35,7 +35,7 @@ export default function NextEditionSection() {
                   </div>
                 </div>
                 <Link
-                  href="#inscripciones"
+                  href="/inscripciones"
                   className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
                 >
                   INSCRÍBETE AQUÍ
