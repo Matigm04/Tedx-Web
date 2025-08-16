@@ -11,9 +11,9 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <SponsorsCarousel />
-      <NextEditionSection />
       <AboutSection />
+      <NextEditionSection />
+      <SponsorsCarousel />
       <FeaturesSection />
       <Footer />
     </main>

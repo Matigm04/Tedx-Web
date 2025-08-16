@@ -1,80 +1,121 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Crown, Heart, Users } from "lucide-react"
 
-const sponsors = [
-  { name: "UTN Córdoba", image: "/images/Edicion2024/Sponsors/Utn_Cordoba2.jpg" },
-  { name: "SEU", image: "/images/Edicion2024/Sponsors/SEU.jpg" },
-  { name: "Aguiar & Asoc.", image: "/images/Edicion2024/Sponsors/Aguiar_y_Asoc.jpg" },
-  { name: "ITLG", image: "/images/Edicion2024/Sponsors/itlg2.jpg" },
-  { name: "Cofactory", image: "/images/Edicion2024/Sponsors/Cofactory.jpg" },
-  { name: "RVN", image: "/images/Edicion2024/Sponsors/RVN_logo.jpg" },
-  { name: "Pepsi", image: "/images/Edicion2024/Sponsors/Pepsi.jpg" },
-  { name: "McDonald's", image: "/images/Edicion2024/Sponsors/McDonalds.jpg" },
-]
+// Jerarquía de sponsors basada en niveles de contribución
+const sponsorTiers = {
+  main: {
+    title: "Main Sponsors",
+    description: "Nuestros patrocinadores principales",
+    icon: Crown,
+    sponsors: [
+      { name: "Vippin", image: "/images/sponsors/vippin.png" },
+      { name: "La Segunda", image: "/images/sponsors/la-segunda.png" }
+    ]
+  },
+  philanthropist: {
+    title: "Philanthropist", 
+    description: "Comprometidos con nuestra causa",
+    icon: Heart,
+    sponsors: [
+      { name: "AiphaG", image: "/images/sponsors/aiphag.png" }
+    ]
+  },
+  mentors: {
+    title: "Mentors",
+    description: "Guiando nuestro crecimiento", 
+    icon: Users,
+    sponsors: [
+      { name: "Mancor", image: "/images/Edicion2023/Sporsors/Mancor.jpg" },
+      { name: "Indoors", image: "/images/Edicion2024/Sponsors/Indoors.jpg" }
+    ]
+  }
+}
 
 export default function SponsorsCarousel() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % sponsors.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + sponsors.length) % sponsors.length)
-  }
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 4000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Nuestros Colaboradores</h2>
-          <div className="w-16 h-1 bg-red-600 mx-auto"></div>
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Nuestros Sponsors 2025</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Gracias a estos increíbles patrocinadores que hacen posible TEDxUTNCórdoba.
+            Cada uno aporta valor único a nuestra comunidad.
+          </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="flex items-center justify-center">
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-
-            <div className="w-full max-w-xs h-32 relative">
-              <Image
-                src={sponsors[currentSlide].image || "/placeholder.svg"}
-                alt={sponsors[currentSlide].name}
-                fill
-                className="object-contain"
-              />
+        <div className="max-w-6xl mx-auto space-y-16">
+          {/* Main Sponsors - Nivel más alto */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-full inline-flex items-center gap-3 mb-6 shadow-lg">
+              <sponsorTiers.main.icon className="w-6 h-6" />
+              <h3 className="text-xl font-bold">{sponsorTiers.main.title}</h3>
             </div>
-
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 z-10 p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
+            <p className="text-orange-600 font-medium mb-8 text-lg">{sponsorTiers.main.description}</p>
+            <div className="flex justify-center items-center gap-8 flex-wrap">
+              {sponsorTiers.main.sponsors.map((sponsor, index) => (
+                <div key={index} className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-yellow-200 hover:border-yellow-400">
+                  <div className="w-48 h-32 relative">
+                    <Image
+                      src={sponsor.image}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-lg font-bold text-gray-800 mt-4">{sponsor.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="flex justify-center mt-8 space-x-2">
-            {sponsors.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? "bg-red-600" : "bg-gray-300"
-                }`}
-              />
-            ))}
+          {/* Philanthropist - Nivel medio */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-pink-500 to-red-500 text-white px-8 py-4 rounded-full inline-flex items-center gap-3 mb-6 shadow-lg">
+              <sponsorTiers.philanthropist.icon className="w-6 h-6" />
+              <h3 className="text-xl font-bold">{sponsorTiers.philanthropist.title}</h3>
+            </div>
+            <p className="text-pink-600 font-medium mb-8 text-lg">{sponsorTiers.philanthropist.description}</p>
+            <div className="flex justify-center items-center gap-6 flex-wrap">
+              {sponsorTiers.philanthropist.sponsors.map((sponsor, index) => (
+                <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-pink-200 hover:border-pink-400">
+                  <div className="w-40 h-28 relative">
+                    <Image
+                      src={sponsor.image}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-lg font-bold text-gray-800 mt-4">{sponsor.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mentors - Nivel básico */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full inline-flex items-center gap-3 mb-6 shadow-lg">
+              <sponsorTiers.mentors.icon className="w-6 h-6" />
+              <h3 className="text-xl font-bold">{sponsorTiers.mentors.title}</h3>
+            </div>
+            <p className="text-blue-600 font-medium mb-8 text-lg">{sponsorTiers.mentors.description}</p>
+            <div className="flex justify-center items-center gap-6 flex-wrap">
+              {sponsorTiers.mentors.sponsors.map((sponsor, index) => (
+                <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-200 hover:border-blue-400">
+                  <div className="w-36 h-24 relative">
+                    <Image
+                      src={sponsor.image}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-lg font-bold text-gray-800 mt-4">{sponsor.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
