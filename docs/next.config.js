@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // App Directory ya está habilitado por defecto en Next.js 14+
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  distDir: 'out',
+  basePath: '/Tedx-Web',
+  assetPrefix: '/Tedx-Web/',
+  images: {
+    unoptimized: true
+  }
 }
 
 module.exports = nextConfig
