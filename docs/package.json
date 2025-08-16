@@ -4,11 +4,10 @@
   "description": "Sitio web oficial de TEDxUTNCórdoba",
   "main": "index.js",
   "scripts": {
-    "dev": "cd frontend && live-server --host=localhost --port=3000",
-    "dev-root": "live-server --host=localhost --port=3000 --open=frontend/index.html",
-    "start": "cd frontend && live-server --host=localhost --port=3000",
-    "build": "echo 'Build script - copy frontend files to public'",
-    "serve": "live-server --host=localhost --port=8080 --open=public/index.html"
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "keywords": [
     "tedx",
@@ -19,10 +18,24 @@
   ],
   "author": "TEDxUTNCórdoba Team",
   "license": "MIT",
-  "devDependencies": {
-    "live-server": "^1.2.2"
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "googleapis": "^155.0.1",
+    "lucide-react": "^0.539.0",
+    "next": "14.2.5",
+    "postcss": "^8.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwindcss": "^3.4.17"
   },
-  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Matigm04/Tedx-Web.git"
