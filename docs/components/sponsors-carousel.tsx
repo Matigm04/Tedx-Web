@@ -10,8 +10,8 @@ const sponsorTiers = {
     description: "Nuestros patrocinadores principales",
     icon: Crown,
     sponsors: [
-      { name: "Vippin", image: "/images/sponsors/vippin.png" },
-      { name: "La Segunda", image: "/images/sponsors/la-segunda.png" }
+      { name: "Vippin", image: "/images/sponsors/vippinn_logo.png" },
+      { name: "La Segunda", image: "/images/sponsors/lasegunda_logo.jpg" }
     ]
   },
   philanthropist: {
@@ -19,7 +19,7 @@ const sponsorTiers = {
     description: "Comprometidos con nuestra causa",
     icon: Heart,
     sponsors: [
-      { name: "AiphaG", image: "/images/sponsors/aiphag.png" }
+      { name: "AiphaG", image: "/images/sponsors/aiphag_lofo.png" }
     ]
   },
   mentors: {
@@ -28,7 +28,7 @@ const sponsorTiers = {
     icon: Users,
     sponsors: [
       { name: "Mancor", image: "/images/Edicion2023/Sporsors/Mancor.jpg" },
-      { name: "Indoors", image: "/images/Edicion2024/Sponsors/Indoors.jpg" }
+      { name: "Indoors", image: "/images/Edicion2024/Sponsors/Indoors.jpg" },
     ]
   }
 }

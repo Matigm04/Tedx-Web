@@ -37,7 +37,7 @@ export default function Navbar() {
         scrolled ? "bg-white backdrop-blur-md shadow-lg" : "bg-white backdrop-blur-md shadow-md"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -47,7 +47,7 @@ export default function Navbar() {
                 alt="TEDxUTNCórdoba"
                 width={200}
                 height={60}
-                className="h-15 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </Link>
           </div>
