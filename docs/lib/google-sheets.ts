@@ -27,6 +27,11 @@ export class GoogleSheetsService {
   private spreadsheetId: string;
 
   constructor() {
+    // Verificar que las variables de entorno estén configuradas
+    if (!process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
+      throw new Error('Las credenciales de Google Sheets no están configuradas. Verifica tu archivo .env.local');
+    }
+
     // Configurar autenticación
     const auth = new google.auth.GoogleAuth({
       credentials: {

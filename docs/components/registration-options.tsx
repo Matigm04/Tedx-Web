@@ -99,6 +99,8 @@ export default function RegistrationOptions() {
         })
         // El mensaje se mantiene hasta que el usuario recargue la página
       } else {
+        const errorData = await response.json();
+        console.error('Error del servidor:', errorData);
         setSubmitStatus("error")
       }
     } catch (error) {
@@ -164,27 +166,23 @@ export default function RegistrationOptions() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
               <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-white text-center">
                 <FileText className="w-16 h-16 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2">Inscripción Gratuita</h3>
-                <p className="text-blue-100">Completa el formulario y participa del proceso de selección</p>
+                <h3 className="text-2xl font-bold mb-2">Entrada Classic</h3>
+                <p className="text-blue-100">Completa el formulario y participa del sorteo de ubicaciones</p>
               </div>
 
               <div className="p-8 flex-1 flex flex-col">
                 <div className="space-y-4 mb-8 flex-1">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Acceso gratuito al evento</span>
+                    <span>Entrada por sorteo</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Proceso de selección por formulario</span>
+                    <span>Coffee break</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Confirmación por email</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Certificado de participación</span>
+                    <span>Kit sorpresa</span>
                   </div>
                 </div>
 
@@ -202,23 +200,27 @@ export default function RegistrationOptions() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative flex flex-col">
               <div className="bg-gradient-to-r from-red-600 to-red-700 p-8 text-white text-center">
                 <CreditCard className="w-16 h-16 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2">Entrada Anticipada</h3>
-                <p className="text-red-100">Asegura tu lugar comprando tu entrada por adelantado</p>
+                <h3 className="text-2xl font-bold mb-2">Entradas Premium y VIP</h3>
+                <p className="text-red-100">Asegura tu lugar comprando tu entrada</p>
               </div>
 
               <div className="p-8 flex-1 flex flex-col">
                 <div className="space-y-4 mb-8 flex-1">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Lugar garantizado</span>
+                    <span>Entrada asegurada</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Sin proceso de selección</span>
+                    <span>Coffee break</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Acceso prioritario</span>
+                    <span>Kit sorpresa</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span>Remera TEDx (VIP)</span>
                   </div>
                 </div>
 
@@ -241,7 +243,7 @@ export default function RegistrationOptions() {
           <div className="max-w-3xl mx-auto px-5">
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">Formulario de Inscripción Gratuita</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Formulario de Entrada Classic</h3>
                 <p className="text-gray-600">Completa todos los campos para participar del proceso de selección</p>
               </div>
 
@@ -667,8 +669,8 @@ export default function RegistrationOptions() {
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                   <h4 className="font-semibold text-blue-900 mb-3">📋 Información importante</h4>
                   <ul className="text-sm text-blue-800 space-y-2">
-                    <li>• Las inscripciones gratuitas están sujetas a un proceso de selección</li>
-                    <li>• Recibirás una confirmación por email en un plazo de 7 días hábiles</li>
+                    <li>• Las inscripciones gratuitas están sujetas a un proceso de sorteo</li>
+                    <li>• Serás notificado vía mail si fuiste sorteado</li>
                     <li>• Los cupos son limitados</li>
                     <li>• La información proporcionada será utilizada únicamente para la gestión del evento</li>
                   </ul>
@@ -713,7 +715,7 @@ export default function RegistrationOptions() {
                         <CheckCircle className="w-6 h-6" />
                         <span className="font-semibold text-lg">¡Inscripción enviada exitosamente!</span>
                       </div>
-                      <p className="text-sm mt-3 text-center">Tu inscripción ha sido guardada correctamente. Recibirás una confirmación pronto.</p>
+                      <p className="text-sm mt-3 text-center">Tu inscripción ha sido guardada correctamente. Serás notificado vía mail si fuiste sorteado.</p>
                     </div>
                   )}
 
