@@ -38,7 +38,7 @@ export default function RegistrationOptions() {
   })
 
   const handlePaidRegistration = () => {
-    window.open("https://eventor.com.ar/share/jTh0KwaupdGS", "_blank")
+    window.open("https://eventor.com.ar/share/e3DnLxFkIaD7", "_blank")
   }
 
   const handleFreeRegistration = () => {
@@ -186,17 +186,17 @@ export default function RegistrationOptions() {
             <p className="text-xl text-gray-600">Dos opciones para asegurar tu lugar en este evento único</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Free Registration Option */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full">
               <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-8 text-white text-center">
                 <FileText className="w-16 h-16 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-2">Entrada Classic</h3>
                 <p className="text-blue-100">Completa el formulario y participa del sorteo de ubicaciones</p>
               </div>
 
-              <div className="p-8 flex-1 flex flex-col">
-                <div className="space-y-4 mb-8 flex-1">
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
                     <span>Entrada por sorteo</span>
@@ -209,28 +209,42 @@ export default function RegistrationOptions() {
                     <CheckCircle className="w-5 h-5 text-green-500" />
                     <span>Kit sorpresa</span>
                   </div>
+                  {/* Spacer invisible para alineación */}
+                  <div className="invisible flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5" />
+                    <span>Spacer</span>
+                  </div>
                 </div>
 
-                <button
-                  onClick={handleFreeRegistration}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 mt-auto"
-                >
-                  <FileText className="w-5 h-5" />
-                  Completar Formulario
-                </button>
+                <div className="mt-4">
+                  <button
+                    disabled
+                    className="w-full bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 cursor-not-allowed opacity-70"
+                    title="Las inscripciones se habilitarán próximamente"
+                  >
+                    <FileText className="w-5 h-5" />
+                    Habilitado Próximamente
+                  </button>
+                  <p className="text-center text-sm text-gray-500 mt-3">
+                    Las inscripciones se abrirán próximamente.
+                  </p>
+                  <p className="text-center text-sm text-gray-500 mt-1">
+                    ¡Mantente atento!
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Paid Registration Option */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative flex flex-col">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full">
               <div className="bg-gradient-to-r from-red-600 to-red-700 p-8 text-white text-center">
                 <CreditCard className="w-16 h-16 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-2">Entradas Premium y VIP</h3>
                 <p className="text-red-100">Asegura tu lugar comprando tu entrada</p>
               </div>
 
-              <div className="p-8 flex-1 flex flex-col">
-                <div className="space-y-4 mb-8 flex-1">
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
                     <span>Entrada asegurada</span>
@@ -249,13 +263,15 @@ export default function RegistrationOptions() {
                   </div>
                 </div>
 
-                <button
-                  onClick={handlePaidRegistration}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 mt-auto"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  Comprar Entrada
-                </button>
+                <div className="mt-4">
+                  <button
+                    onClick={handlePaidRegistration}
+                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Comprar Entrada
+                  </button>
+                </div>
               </div>
             </div>
           </div>
