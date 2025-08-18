@@ -67,43 +67,68 @@ export default function RegistrationOptions() {
     setSubmitStatus("idle")
 
     try {
-      const response = await fetch('/api/inscripciones', {
+      // Preparar los datos para Google Apps Script
+      const formDataToSend = new FormData()
+      
+      // Agregar todos los campos del formulario
+      formDataToSend.append('nombre', formData.nombre)
+      formDataToSend.append('apellidos', formData.apellidos)
+      formDataToSend.append('dni', formData.dni)
+      formDataToSend.append('edad', formData.edad)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('celular', formData.celular)
+      formDataToSend.append('conoceTED', formData.conoceTED)
+      formDataToSend.append('participoTEDx', formData.participoTEDx)
+      formDataToSend.append('perteneceUTN', formData.perteneceUTN)
+      formDataToSend.append('comunidadUTN', formData.comunidadUTN)
+      formDataToSend.append('soy', formData.soy)
+      formDataToSend.append('especialidad', formData.especialidad)
+      formDataToSend.append('legajo', formData.legajo)
+      formDataToSend.append('anoCursando', formData.anoCursando.join(', '))
+      formDataToSend.append('graduadoCarrera', formData.graduadoCarrera)
+      formDataToSend.append('materiaActual', formData.materiaActual)
+      formDataToSend.append('actividadesFacultad', formData.actividadesFacultad)
+      
+      // Agregar timestamp
+      formDataToSend.append('timestamp', new Date().toLocaleString('es-AR', {
+        timeZone: 'America/Argentina/Cordoba'
+      }))
+
+      // Enviar al script de Google Apps
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyVGMXj5EfpBDS3MnzVk8vtX3Q63705yfVRRRPCDutlngeyky9BiGD1zBFe2qMjtcGs/exec', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
+        mode: 'no-cors' // Necesario para Google Apps Script
       })
 
-      if (response.ok) {
-        setSubmitStatus("success")
-        // Limpiar formulario
-        setFormData({
-          nombre: "",
-          apellidos: "",
-          dni: "",
-          edad: "",
-          email: "",
-          celular: "",
-          conoceTED: "",
-          participoTEDx: "",
-          perteneceUTN: "",
-          comunidadUTN: "",
-          soy: "",
-          especialidad: "",
-          legajo: "",
-          anoCursando: [],
-          graduadoCarrera: "",
-          materiaActual: "",
-          actividadesFacultad: "",
-        })
-        // El mensaje se mantiene hasta que el usuario recargue la página
-      } else {
-        const errorData = await response.json();
-        console.error('Error del servidor:', errorData);
-        setSubmitStatus("error")
-      }
+      // Como usamos mode: 'no-cors', no podemos leer la respuesta directamente
+      // Pero si llegamos aquí sin error, asumimos éxito
+      console.log("Éxito")
+      setSubmitStatus("success")
+      
+      // Limpiar formulario
+      setFormData({
+        nombre: "",
+        apellidos: "",
+        dni: "",
+        edad: "",
+        email: "",
+        celular: "",
+        conoceTED: "",
+        participoTEDx: "",
+        perteneceUTN: "",
+        comunidadUTN: "",
+        soy: "",
+        especialidad: "",
+        legajo: "",
+        anoCursando: [],
+        graduadoCarrera: "",
+        materiaActual: "",
+        actividadesFacultad: "",
+      })
+
     } catch (error) {
+      console.log("Error")
       console.error('Error al enviar formulario:', error)
       setSubmitStatus("error")
     } finally {
