@@ -20,6 +20,11 @@ export const metadata = {
   description:
     "Evento independiente TEDx en la Universidad Tecnológica Nacional Córdoba. Descubre charlas inspiradoras, conecta con líderes de pensamiento y forma parte de una comunidad que impulsa el cambio.",
   keywords: "TEDx, UTN Córdoba, charlas inspiradoras, ideas, innovación, tecnología, universidad",
+  icons: {
+    icon: '/x favicon png.png',
+    shortcut: '/x favicon png.png',
+    apple: '/x favicon png.png',
+  },
 }
 
 export default function RootLayout({
@@ -29,6 +34,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${inter.variable} ${helvetica.variable} antialiased`}>
+      <head>
+        <link rel="icon" href="/x favicon png.png" type="image/png" />
+        <link rel="shortcut icon" href="/x favicon png.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/x favicon png.png" />
+      </head>
       <body className="font-sans">{children}</body>
     </html>
   )

@@ -28,7 +28,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Inicio" },
     { href: "/ediciones", label: "Ediciones" },
-    { href: "/inscripciones", label: "Inscripciones" },
+    { href: "/inscripciones", label: "Inscripciones 2025", isHighlighted: true },
   ]
 
   return (
@@ -53,21 +53,27 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-10">
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`font-medium relative group transition-colors ${
-                  isActive(link.href) ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                  link.isHighlighted
+                    ? "text-white bg-red-600 px-4 py-1.5 rounded-full hover:bg-red-700"
+                    : isActive(link.href) 
+                    ? "text-red-600" 
+                    : "text-gray-700 hover:text-red-600"
                 }`}
               >
                 {link.label}
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-red-600 transition-all duration-300 ${
-                    isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
-                ></span>
+                {!link.isHighlighted && (
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-red-600 transition-all duration-300 ${
+                      isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                )}
               </Link>
             ))}
           </div>
@@ -96,16 +102,21 @@ export default function Navbar() {
         >
           <div className="py-4 space-y-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`block font-medium transition-colors ${
-                  isActive(link.href) ? "text-red-600" : "text-gray-700 hover:text-red-600"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href} className="flex items-start">
+                <Link
+                  href={link.href}
+                  className={`font-medium transition-colors ${
+                    link.isHighlighted
+                      ? "text-white bg-red-600 px-4 py-1.5 rounded-full hover:bg-red-700"
+                      : isActive(link.href) 
+                      ? "text-red-600" 
+                      : "text-gray-700 hover:text-red-600"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </div>
             ))}
           </div>
         </div>

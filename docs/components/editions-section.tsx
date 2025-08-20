@@ -89,7 +89,7 @@ const editions: Edition[] = [
     ],
     sponsors: [
       { name: "UTN Córdoba", image: "/images/Edicion2024/Sponsors/Utn_Cordoba2.jpg" },
-      { name: "SEU", image: "/images/Edicion2024/Sponsors/SEU.jpg" },
+      { name: "SEU - UTN", image: "/images/Edicion2024/Sponsors/SEU.jpg" },
       { name: "Aguiar & Asoc", image: "/images/Edicion2024/Sponsors/Aguiar_y_Asoc.jpg" },
       { name: "ITLG", image: "/images/Edicion2024/Sponsors/itlg2.jpg" },
       { name: "Cofactory", image: "/images/Edicion2024/Sponsors/Cofactory.jpg" },
@@ -163,7 +163,7 @@ const editions: Edition[] = [
     ],
     sponsors: [
       { name: "UTN Córdoba", image: "/images/Edicion2023/Sporsors/UTN_Cordoba.jpg" },
-      { name: "SEU UTN", image: "/images/Edicion2023/Sporsors/SEU_UTN.jpg" },
+      { name: "SEU - UTN", image: "/images/Edicion2023/Sporsors/SEU_UTN.jpg" },
       { name: "Flexxus", image: "/images/Edicion2023/Sporsors/flexxus.jpg" },
       { name: "Pepsi", image: "/images/Edicion2023/Sporsors/Pepsi.jpg" },
       { name: "Nuovamec S.A", image: "/images/Edicion2023/Sporsors/Nuevomec SA.jpg" },
@@ -255,7 +255,7 @@ const editions: Edition[] = [
     ],
     sponsors: [
       { name: "UTN Córdoba", image: "/images/Edicion2022/Sponsors/UTN_Cordoba_2023.jpg" },
-      { name: "SEU", image: "/images/Edicion2022/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.jpg" },
+      { name: "SEU - UTN", image: "/images/Edicion2022/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.jpg" },
       { name: "AVEIT", image: "/images/Edicion2022/Sponsors/AVEIT_2021.jpg" },
       { name: "Aguiar & Asoc.", image: "/images/Edicion2022/Sponsors/AguiarYAsoc.jpg" },
       { name: "Dinamic", image: "/images/Edicion2022/Sponsors/Dinamic.jpg" },
@@ -313,7 +313,7 @@ const editions: Edition[] = [
     ],
     sponsors: [
       { name: "UTN", image: "/images/Edicion2021/Sponsors/utn.jpeg" },
-      { name: "SEU", image: "/images/Edicion2021/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.jpg" },
+      { name: "SEU - UTN", image: "/images/Edicion2021/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.jpg" },
       { name: "AVEIT", image: "/images/Edicion2021/Sponsors/AVEIT.jpg" },
       { name: "Bartolom Cerutti", image: "/images/Edicion2021/Sponsors/bartolom_cerutti.jpeg" },
       { name: "Mancor", image: "/images/Edicion2021/Sponsors/mancor.jpg" },

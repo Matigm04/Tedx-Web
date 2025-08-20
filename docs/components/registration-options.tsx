@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
+import Image from "next/image"
 import { Calendar, Clock, MapPin, Users, CreditCard, FileText, ExternalLink, CheckCircle, Loader2 } from "lucide-react"
 
 export default function RegistrationOptions() {
@@ -259,7 +260,7 @@ export default function RegistrationOptions() {
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span>Remera TEDx (VIP)</span>
+                    <span>Remera TEDx (Incluida con la entrada VIP)</span>
                   </div>
                 </div>
 
@@ -268,7 +269,13 @@ export default function RegistrationOptions() {
                     onClick={handlePaidRegistration}
                     className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2"
                   >
-                    <ExternalLink className="w-5 h-5" />
+                    <Image
+                      src="/images/sponsors/eventor logo.png"
+                      alt="Eventor"
+                      width={20}
+                      height={20}
+                      className="object-contain"
+                    />
                     Comprar Entrada
                   </button>
                 </div>

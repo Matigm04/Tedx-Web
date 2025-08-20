@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Crown, Heart, Users } from "lucide-react"
+import { Crown, Heart, Users, GraduationCap } from "lucide-react"
 
 // Jerarquía de sponsors basada en niveles de contribución
 const sponsorTiers = {
@@ -10,8 +10,7 @@ const sponsorTiers = {
     description: "Nuestros patrocinadores principales",
     icon: Crown,
     sponsors: [
-      { name: "Vippin", image: "/images/sponsors/vippinn_logo.png" },
-      { name: "La Segunda", image: "/images/sponsors/lasegunda_logo.jpg" }
+      { name: "Vippin", image: "/images/sponsors/vippin_logo.png" }
     ]
   },
   philanthropist: {
@@ -19,7 +18,11 @@ const sponsorTiers = {
     description: "Comprometidos con nuestra causa",
     icon: Heart,
     sponsors: [
-      { name: "AiphaG", image: "/images/sponsors/aiphag_lofo.png" }
+      { name: "DLOSS", image: "/images/sponsors/dloss_logo.jpg" },
+      { name: "AiphaG", image: "/images/sponsors/aiphag_logo.png" },
+      { name: "Verdeflor", image: "/images/sponsors/verdeflor_logo.png" },
+      { name: "Pepsi", image: "/images/sponsors/pepsi_logo.jpg" },
+      { name: "Chammas", image: "/images/sponsors/chammas_logo.jpeg" }
     ]
   },
   mentors: {
@@ -27,8 +30,21 @@ const sponsorTiers = {
     description: "Guiando nuestro crecimiento", 
     icon: Users,
     sponsors: [
-      { name: "Mancor", image: "/images/Edicion2023/Sporsors/Mancor.jpg" },
-      { name: "Indoors", image: "/images/Edicion2024/Sponsors/Indoors.jpg" },
+      { name: "Eventor", image: "/images/sponsors/eventor logo.png" },
+      { name: "Aguiar y asoc", image: "/images/sponsors/aguiar_logo.jpg" },
+      { name: "Máximo 1ro - Shell", image: "/images/sponsors/shell logo (sin nombre).png" },
+      { name: "Mancor", image: "/images/sponsors/mancor_logo.jpg" },
+      { name: "Indoors", image: "/images/sponsors/indoors_logo.jpg" },
+      { name: "Alumac", image: "/images/sponsors/alumac_logo.jpg" },
+      { name: "McDonald's", image: "/images/sponsors/mcdonalds_logo.jpg" }
+    ]
+  },
+  academic: {
+    title: "Host Académico",
+    description: "Nuestra casa de estudios",
+    icon: GraduationCap,
+    sponsors: [
+      { name: "SEU - UTN", image: "/images/sponsors/seu_utn_logo.jpg" }
     ]
   }
 }
@@ -105,6 +121,30 @@ export default function SponsorsCarousel() {
               {sponsorTiers.mentors.sponsors.map((sponsor, index) => (
                 <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-200 hover:border-blue-400">
                   <div className="w-36 h-24 relative">
+                    <Image
+                      src={sponsor.image}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-lg font-bold text-gray-800 mt-4">{sponsor.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Host Académico - Nueva categoría */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full inline-flex items-center gap-3 mb-6 shadow-lg">
+              <sponsorTiers.academic.icon className="w-6 h-6" />
+              <h3 className="text-xl font-bold">{sponsorTiers.academic.title}</h3>
+            </div>
+            <p className="text-green-600 font-medium mb-8 text-lg">{sponsorTiers.academic.description}</p>
+            <div className="flex justify-center items-center gap-6 flex-wrap">
+              {sponsorTiers.academic.sponsors.map((sponsor, index) => (
+                <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-green-200 hover:border-green-400">
+                  <div className="w-40 h-28 relative">
                     <Image
                       src={sponsor.image}
                       alt={sponsor.name}
