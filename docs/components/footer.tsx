@@ -1,4 +1,5 @@
-import { Mail, MapPin, University, Instagram, Facebook, Twitter, Youtube } from "lucide-react"
+import { Mail, MapPin, University, Instagram, Facebook, Youtube } from "lucide-react"
+import { TikTokIcon } from "./tiktok-icon"
 
 export default function Footer() {
   return (
@@ -10,11 +11,21 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4">TEDxUTNCórdoba</h3>
             <p className="text-gray-300 mb-6">Ideas que valen la pena difundir</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
+              <a
+                href="https://www.facebook.com/profile.php?id=100071202842262"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 hover:text-red-500 transition-colors"
+              >
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
-                <Twitter className="w-6 h-6" />
+              <a
+                href="https://www.tiktok.com/@tedxutncordoba?_t=ZM-8z4FXRXA8rY&_r=1"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 hover:text-red-500 transition-colors"
+              >
+                <TikTokIcon className="w-6 h-6" />
               </a>
               <a
                 href="https://www.instagram.com/tedxutncordoba/"
@@ -24,7 +35,12 @@ export default function Footer() {
               >
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
+              <a
+                href="https://www.youtube.com/@TEDx"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 hover:text-red-500 transition-colors"
+              >
                 <Youtube className="w-6 h-6" />
               </a>
             </div>
@@ -58,7 +74,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-red-500" />
-                <span className="text-gray-300">tedxutncordoba@frc.utn.edu.ar</span>
+                <span className="text-gray-300">tedxutncordoba@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <University className="w-5 h-5 text-red-500" />
