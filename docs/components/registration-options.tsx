@@ -19,23 +19,23 @@ export default function RegistrationOptions() {
     celular: "",
 
     // TED experience
-    conoceTED: "",
-    participoTEDx: "",
+    conoce_ted: "",
+    participo_tedx: "",
 
     // UTN community
-    perteneceUTN: "",
-    comunidadUTN: "",
+    pertenece_utn: "",
+    comunidad_utn: "",
     soy: "",
 
     // Academic info
     especialidad: "",
     legajo: "",
-    anoCursando: [] as string[],
-    graduadoCarrera: "",
+    ano_cursando: [] as string[],
+    graduado_carrera: "",
 
     // Activities
-    materiaActual: "",
-    actividadesFacultad: "",
+    materia_actual: "",
+    actividades_facultad: "",
   })
 
   const handlePaidRegistration = () => {
@@ -63,39 +63,32 @@ export default function RegistrationOptions() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
+    // Prevenir recarga de la página
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
     try {
-      // Preparar los datos para Google Apps Script
+      // Crear FormData usando el estado como única fuente de verdad
       const formDataToSend = new FormData()
       
-      // Agregar todos los campos del formulario
-      formDataToSend.append('nombre', formData.nombre)
-      formDataToSend.append('apellidos', formData.apellidos)
-      formDataToSend.append('dni', formData.dni)
-      formDataToSend.append('edad', formData.edad)
-      formDataToSend.append('email', formData.email)
-      formDataToSend.append('celular', formData.celular)
-      formDataToSend.append('conoceTED', formData.conoceTED)
-      formDataToSend.append('participoTEDx', formData.participoTEDx)
-      formDataToSend.append('perteneceUTN', formData.perteneceUTN)
-      formDataToSend.append('comunidadUTN', formData.comunidadUTN)
-      formDataToSend.append('soy', formData.soy)
-      formDataToSend.append('especialidad', formData.especialidad)
-      formDataToSend.append('legajo', formData.legajo)
-      formDataToSend.append('anoCursando', formData.anoCursando.join(', '))
-      formDataToSend.append('graduadoCarrera', formData.graduadoCarrera)
-      formDataToSend.append('materiaActual', formData.materiaActual)
-      formDataToSend.append('actividadesFacultad', formData.actividadesFacultad)
+      // Recorrer todas las claves del estado formData y añadirlas al FormData
+      Object.entries(formData).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          // Manejar arrays convirtiéndolos a string
+          formDataToSend.append(key, value.join(', '))
+        } else {
+          // Añadir valores regulares (string)
+          formDataToSend.append(key, value)
+        }
+      })
       
-      // Agregar timestamp
+      // Agregar timestamp para registro
       formDataToSend.append('timestamp', new Date().toLocaleString('es-AR', {
         timeZone: 'America/Argentina/Cordoba'
       }))
 
-      // Enviar al script de Google Apps
+      // Realizar petición fetch a Google Apps Script
       const response = await fetch('https://script.google.com/macros/s/AKfycbyVGMXj5EfpBDS3MnzVk8vtX3Q63705yfVRRRPCDutlngeyky9BiGD1zBFe2qMjtcGs/exec', {
         method: 'POST',
         body: formDataToSend,
@@ -104,10 +97,10 @@ export default function RegistrationOptions() {
 
       // Como usamos mode: 'no-cors', no podemos leer la respuesta directamente
       // Pero si llegamos aquí sin error, asumimos éxito
-      console.log("Éxito")
+      console.log("Éxito: Formulario enviado correctamente")
       setSubmitStatus("success")
       
-      // Limpiar formulario
+      // Limpiar formulario restaurando estado inicial
       setFormData({
         nombre: "",
         apellidos: "",
@@ -115,21 +108,20 @@ export default function RegistrationOptions() {
         edad: "",
         email: "",
         celular: "",
-        conoceTED: "",
-        participoTEDx: "",
-        perteneceUTN: "",
-        comunidadUTN: "",
+        conoce_ted: "",
+        participo_tedx: "",
+        pertenece_utn: "",
+        comunidad_utn: "",
         soy: "",
         especialidad: "",
         legajo: "",
-        anoCursando: [],
-        graduadoCarrera: "",
-        materiaActual: "",
-        actividadesFacultad: "",
+        ano_cursando: [],
+        graduado_carrera: "",
+        materia_actual: "",
+        actividades_facultad: "",
       })
 
     } catch (error) {
-      console.log("Error")
       console.error('Error al enviar formulario:', error)
       setSubmitStatus("error")
     } finally {
@@ -410,7 +402,7 @@ export default function RegistrationOptions() {
                           name="perteneceUTN"
                           value="si"
                           className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                          onChange={(e) => setFormData({ ...formData, perteneceUTN: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, pertenece_utn: e.target.value })}
                         />
                         <span className="ml-2">Sí</span>
                       </label>
@@ -420,7 +412,7 @@ export default function RegistrationOptions() {
                           name="perteneceUTN"
                           value="no"
                           className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                          onChange={(e) => setFormData({ ...formData, perteneceUTN: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, pertenece_utn: e.target.value })}
                         />
                         <span className="ml-2">No</span>
                       </label>
@@ -432,8 +424,8 @@ export default function RegistrationOptions() {
                     <select
                       name="comunidadUTN"
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
-                      value={formData.comunidadUTN}
-                      onChange={(e) => setFormData({ ...formData, comunidadUTN: e.target.value })}
+                      value={formData.comunidad_utn}
+                      onChange={(e) => setFormData({ ...formData, comunidad_utn: e.target.value })}
                     >
                       <option value="">Selecciona una opción</option>
                       <option value="utn-frc">UTN FRC</option>
@@ -555,7 +547,7 @@ export default function RegistrationOptions() {
                               type="checkbox"
                               value={ano}
                               className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
-                              onChange={(e) => handleCheckboxChange("anoCursando", e.target.value)}
+                              onChange={(e) => handleCheckboxChange("ano_cursando", e.target.value)}
                             />
                             <span className="ml-2">{ano}</span>
                           </label>
@@ -580,8 +572,8 @@ export default function RegistrationOptions() {
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors resize-vertical"
                         placeholder="Describe la materia que dictas..."
-                        value={formData.materiaActual}
-                        onChange={(e) => setFormData({ ...formData, materiaActual: e.target.value })}
+                        value={formData.materia_actual}
+                        onChange={(e) => setFormData({ ...formData, materia_actual: e.target.value })}
                       />
                     </div>
                   </div>
@@ -613,7 +605,7 @@ export default function RegistrationOptions() {
                               name="graduadoCarrera"
                               value={carrera.toLowerCase()}
                               className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                              onChange={(e) => setFormData({ ...formData, graduadoCarrera: e.target.value })}
+                              onChange={(e) => setFormData({ ...formData, graduado_carrera: e.target.value })}
                             />
                             <span className="ml-2">{carrera}</span>
                           </label>
@@ -624,7 +616,7 @@ export default function RegistrationOptions() {
                             name="graduadoCarrera"
                             value="otra"
                             className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                            onChange={(e) => setFormData({ ...formData, graduadoCarrera: e.target.value })}
+                            onChange={(e) => setFormData({ ...formData, graduado_carrera: e.target.value })}
                           />
                           <span className="ml-2">Otra</span>
                         </label>
@@ -648,8 +640,8 @@ export default function RegistrationOptions() {
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors resize-vertical"
                         placeholder="Describe las actividades que realizas en la facultad..."
-                        value={formData.actividadesFacultad}
-                        onChange={(e) => setFormData({ ...formData, actividadesFacultad: e.target.value })}
+                        value={formData.actividades_facultad}
+                        onChange={(e) => setFormData({ ...formData, actividades_facultad: e.target.value })}
                       />
                     </div>
                   </div>
@@ -670,7 +662,7 @@ export default function RegistrationOptions() {
                           name="conoceTED"
                           value="si"
                           className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                          onChange={(e) => setFormData({ ...formData, conoceTED: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, conoce_ted: e.target.value })}
                         />
                         <span className="ml-2">Sí</span>
                       </label>
@@ -680,7 +672,7 @@ export default function RegistrationOptions() {
                           name="conoceTED"
                           value="no"
                           className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                          onChange={(e) => setFormData({ ...formData, conoceTED: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, conoce_ted: e.target.value })}
                         />
                         <span className="ml-2">No</span>
                       </label>
@@ -698,7 +690,7 @@ export default function RegistrationOptions() {
                           name="participoTEDx"
                           value="si"
                           className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                          onChange={(e) => setFormData({ ...formData, participoTEDx: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, participo_tedx: e.target.value })}
                         />
                         <span className="ml-2">Sí</span>
                       </label>
@@ -708,7 +700,7 @@ export default function RegistrationOptions() {
                           name="participoTEDx"
                           value="no"
                           className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500"
-                          onChange={(e) => setFormData({ ...formData, participoTEDx: e.target.value })}
+                          onChange={(e) => setFormData({ ...formData, participo_tedx: e.target.value })}
                         />
                         <span className="ml-2">No</span>
                       </label>
