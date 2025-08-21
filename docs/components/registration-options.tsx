@@ -219,19 +219,12 @@ export default function RegistrationOptions() {
 
                 <div className="mt-4">
                   <button
-                    disabled
-                    className="w-full bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 cursor-not-allowed opacity-70"
-                    title="Las inscripciones se habilitarán próximamente"
+                    onClick={handleFreeRegistration}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2"
                   >
                     <FileText className="w-5 h-5" />
-                    Habilitado Próximamente
+                    Completar Formulario
                   </button>
-                  <p className="text-center text-sm text-gray-500 mt-3">
-                    Las inscripciones se abrirán próximamente.
-                  </p>
-                  <p className="text-center text-sm text-gray-500 mt-1">
-                    ¡Mantente atento!
-                  </p>
                 </div>
               </div>
             </div>
@@ -304,6 +297,7 @@ export default function RegistrationOptions() {
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Nombre/s *</label>
                     <input
                       type="text"
+                      name="nombre"
                       required
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
                       placeholder="Ingresa tu nombre"
@@ -316,6 +310,7 @@ export default function RegistrationOptions() {
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Apellido/s *</label>
                     <input
                       type="text"
+                      name="apellidos"
                       required
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
                       placeholder="Ingresa tus apellidos"
@@ -328,6 +323,7 @@ export default function RegistrationOptions() {
                     <label className="block text-sm font-semibold text-gray-700 mb-2">DNI (sin puntos) *</label>
                     <input
                       type="text"
+                      name="dni"
                       required
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
                       placeholder="12345678"
@@ -376,6 +372,7 @@ export default function RegistrationOptions() {
                     <label className="block text-sm font-semibold text-gray-700 mb-2">E-mail *</label>
                     <input
                       type="email"
+                      name="email"
                       required
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
                       placeholder="tu@email.com"
@@ -388,6 +385,7 @@ export default function RegistrationOptions() {
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Nro de celular *</label>
                     <input
                       type="tel"
+                      name="celular"
                       required
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
                       placeholder="3511234567"
@@ -432,6 +430,7 @@ export default function RegistrationOptions() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Comunidad UTN</label>
                     <select
+                      name="comunidadUTN"
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
                       value={formData.comunidadUTN}
                       onChange={(e) => setFormData({ ...formData, comunidadUTN: e.target.value })}
@@ -538,6 +537,7 @@ export default function RegistrationOptions() {
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Legajo *</label>
                       <input
                         type="text"
+                        name="legajo"
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors"
                         placeholder="Ingresa tu legajo"
@@ -575,6 +575,7 @@ export default function RegistrationOptions() {
                         ¿Qué materia dicta actualmente? *
                       </label>
                       <textarea
+                        name="materiaActual"
                         rows={3}
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors resize-vertical"
@@ -642,6 +643,7 @@ export default function RegistrationOptions() {
                         ¿Qué actividades desarrollás en la facultad? *
                       </label>
                       <textarea
+                        name="actividadesFacultad"
                         rows={4}
                         required
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none transition-colors resize-vertical"
@@ -727,6 +729,7 @@ export default function RegistrationOptions() {
                 <div className="flex items-start gap-3">
                   <input
                     type="checkbox"
+                    name="terms"
                     id="terms"
                     required
                     className="mt-1 w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
