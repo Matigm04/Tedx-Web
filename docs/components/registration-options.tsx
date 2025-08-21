@@ -219,12 +219,19 @@ export default function RegistrationOptions() {
 
                 <div className="mt-4">
                   <button
-                    onClick={handleFreeRegistration}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2"
+                    disabled
+                    className="w-full bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 cursor-not-allowed opacity-70"
+                    title="Las inscripciones se habilitarán próximamente"
                   >
                     <FileText className="w-5 h-5" />
-                    Completar Formulario
+                    Habilitado Próximamente
                   </button>
+                  <p className="text-center text-sm text-gray-500 mt-3">
+                    Las inscripciones se abrirán próximamente.
+                  </p>
+                  <p className="text-center text-sm text-gray-500 mt-1">
+                    ¡Mantente atento!
+                  </p>
                 </div>
               </div>
             </div>
