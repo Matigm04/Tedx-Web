@@ -12,12 +12,17 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100)
-    }
+      const isMobile = window.innerWidth <= 1024
+      if (isMobile) {
+        setScrolled(window.scrollY > 50);
+      } else {
+        setScrolled(window.scrollY > 120);
+      }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (path: string) => {
     if (path === "/" && pathname === "/") return true
