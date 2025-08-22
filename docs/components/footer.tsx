@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <h3 className="text-2xl font-bold mb-4">TEDxUTNCórdoba</h3>
-            <p className="text-gray-300 mb-6">Ideas que valen la pena difundir</p>
+            <p className="text-gray-300 mb-6">Ideas en voz alta</p>
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/profile.php?id=100071202842262"

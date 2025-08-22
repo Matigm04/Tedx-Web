@@ -16,7 +16,7 @@ const helvetica = Inter({
 })
 
 export const metadata = {
-  title: "TEDxUTNCórdoba - Ideas que valen la pena difundir",
+  title: "TEDxUTNCórdoba - Ideas en voz alta",
   description:
     "Evento independiente TEDx en la Universidad Tecnológica Nacional Córdoba. Descubre charlas inspiradoras, conecta con líderes de pensamiento y forma parte de una comunidad que impulsa el cambio.",
   keywords: "TEDx, UTN Córdoba, charlas inspiradoras, ideas, innovación, tecnología, universidad",

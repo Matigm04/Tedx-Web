@@ -32,6 +32,28 @@ interface Edition {
 
 const editions: Edition[] = [
   {
+    year: "2025",
+    title: 'TEDxUTNCórdoba 2025: "Ideas en voz alta"',
+    date: "10 de octubre, 2025",
+    description: [
+      "Seguinos en nuestras redes para más novedades."
+    ],
+    stats: {
+      attendees: "...",
+      speakers: "...",
+      duration: "..."
+    },
+    gallery: [],
+    speakers: [
+      {
+        name: "Noelia Benedetto",
+        role: "Sexóloga e influencer",
+        image: "/images/Edicion2025/Oradores/noelia_benedetto.jpg"
+      }
+    ],
+    sponsors: []
+  },
+  {
     year: "2024",
     title: 'TEDxUTNCórdoba 2024: "Hazlo Posible"',
     date: "4 de Octubre, 2024",
@@ -88,8 +110,8 @@ const editions: Edition[] = [
       },
     ],
     sponsors: [
-      { name: "UTN Córdoba", image: "/images/Edicion2024/Sponsors/Utn_Cordoba2.jpg" },
-      { name: "SEU - UTN", image: "/images/Edicion2024/Sponsors/SEU.jpg" },
+  { name: "UTN Córdoba", image: "/images/Edicion2024/Sponsors/utn.png" },
+      { name: "SEU - UTN", image: "/images/Edicion2024/Sponsors/SEU.png" },
       { name: "Aguiar & Asoc", image: "/images/Edicion2024/Sponsors/Aguiar_y_Asoc.jpg" },
       { name: "ITLG", image: "/images/Edicion2024/Sponsors/itlg2.jpg" },
       { name: "Cofactory", image: "/images/Edicion2024/Sponsors/Cofactory.jpg" },
@@ -162,8 +184,8 @@ const editions: Edition[] = [
       { name: "Sol Constable", role: "Corredora de montaña", image: "/images/Edicion2023/Oradores/Sol Constable.jpg" },
     ],
     sponsors: [
-      { name: "UTN Córdoba", image: "/images/Edicion2023/Sporsors/UTN_Cordoba.jpg" },
-      { name: "SEU - UTN", image: "/images/Edicion2023/Sporsors/SEU_UTN.jpg" },
+      { name: "UTN Córdoba", image: "/images/Edicion2023/Sporsors/utn.png" },
+      { name: "SEU - UTN", image: "/images/Edicion2023/Sporsors/SEU.png" },
       { name: "Flexxus", image: "/images/Edicion2023/Sporsors/flexxus.jpg" },
       { name: "Pepsi", image: "/images/Edicion2023/Sporsors/Pepsi.jpg" },
       { name: "Nuovamec S.A", image: "/images/Edicion2023/Sporsors/Nuevomec SA.jpg" },
@@ -254,8 +276,8 @@ const editions: Edition[] = [
       },
     ],
     sponsors: [
-      { name: "UTN Córdoba", image: "/images/Edicion2022/Sponsors/UTN_Cordoba_2023.jpg" },
-      { name: "SEU - UTN", image: "/images/Edicion2022/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.jpg" },
+      { name: "UTN Córdoba", image: "/images/Edicion2022/Sponsors/utn.png" },
+      { name: "SEU - UTN", image: "/images/Edicion2022/Sponsors/SEU.png" },
       { name: "AVEIT", image: "/images/Edicion2022/Sponsors/AVEIT_2021.jpg" },
       { name: "Aguiar & Asoc.", image: "/images/Edicion2022/Sponsors/AguiarYAsoc.jpg" },
       { name: "Dinamic", image: "/images/Edicion2022/Sponsors/Dinamic.jpg" },
@@ -312,8 +334,8 @@ const editions: Edition[] = [
       },
     ],
     sponsors: [
-      { name: "UTN", image: "/images/Edicion2021/Sponsors/utn.jpeg" },
-      { name: "SEU - UTN", image: "/images/Edicion2021/Sponsors/11 - HOST - SEU - SEU_HostAcadémico.jpg" },
+      { name: "UTN", image: "/images/Edicion2021/Sponsors/utn.png" },
+      { name: "SEU - UTN", image: "/images/Edicion2021/Sponsors/SEU.png" },
       { name: "AVEIT", image: "/images/Edicion2021/Sponsors/AVEIT.jpg" },
       { name: "Bartolom Cerutti", image: "/images/Edicion2021/Sponsors/bartolom_cerutti.jpeg" },
       { name: "Mancor", image: "/images/Edicion2021/Sponsors/mancor.jpg" },
